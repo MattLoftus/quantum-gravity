@@ -1,0 +1,18 @@
+Dear Editor,
+
+I am writing to submit the manuscript "Probing geometry in causal set quantum gravity: spectral dimension fails, vacuum entanglement succeeds" for consideration in Physical Review D.
+
+This paper addresses a fundamental question in discrete quantum gravity: how to detect emergent geometry on causal sets sampled from the Benincasa-Dowker partition function. We present both a negative and a positive result.
+
+The negative result establishes that the widely-used spectral dimension is unreliable on causal sets. We prove via the intermediate value theorem that the d_s = 2 crossing is generic to all finite connected graphs. We show that random graphs with matched link density produce peak spectral dimension values indistinguishable from causal sets, and that the CDT spectral dimension plateau grows with system size while the causal set plateau shrinks.
+
+The positive result demonstrates that Sorkin-Johnston vacuum entanglement entropy is a genuinely geometric probe. It scales as S ~ ln(N) consistent with 1+1D conformal field theory, drops by a factor of 3.4 across the BD phase transition, and for spatially motivated partitions, the continuum phase satisfies the holographic monogamy inequality I_3 <= 0 significantly above chance (p < 10^{-7}). We are careful to note that the monogamy result is partition-dependent and that the effective central charge grows at large N.
+
+This work is appropriate for Physical Review D because it directly impacts how emergent geometry is diagnosed in discrete quantum gravity, providing both a cautionary result about spectral dimension and a constructive alternative based on quantum entanglement.
+
+This work was conducted with AI assistance (Claude, Anthropic), as noted in the acknowledgments. The manuscript is not under consideration elsewhere.
+
+Sincerely,
+Matt Loftus
+Independent Researcher
+matthew.a.loftus@gmail.com

@@ -1,0 +1,16 @@
+Dear Editor,
+
+I am writing to submit the manuscript "Exact combinatorial results for random d-orders with applications to causal set quantum gravity" for consideration in the Journal of Combinatorial Theory, Series A.
+
+This paper derives a collection of exact combinatorial results for random d-orders -- partially ordered sets defined as the intersection of d random total orders -- which serve as the configuration space for d-dimensional causal set quantum gravity. We present eight principal results:
+
+(1) The expected ordering fraction of a random 2-order is exactly 1/2, with exact variance involving six covariance types. (2) The longest antichain equals the longest decreasing subsequence of a composed permutation, connecting to the Ulam-Vershik-Kerov theorem: it scales as 2*sqrt(N) with Tracy-Widom fluctuations. (3) The exact Benincasa-Dowker partition function is computed for N = 4 (576 states) and N = 5 (14,400 states). (4) The expected interval size for a related pair is (N-2)/9. (5) A master interval formula gives the exact probability of any interval size given the rank gap. (6) The expected Glaser action equals exactly 1 for all N >= 2 -- a universal constant independent of system size. (7) The expected BD action is 2N - N*H_N. (8) The interval distribution has a continuous limit shape.
+
+This work is suited to JCTA because the results are purely combinatorial -- proved via exact enumeration, permutation theory, and probabilistic arguments -- while drawing on classical topics including the Erdos-Szekeres theorem, Dilworth's theorem, and the Baik-Deift-Johansson theory of longest increasing subsequences. The master interval formula and the universal Glaser action identity are, to our knowledge, new results in the combinatorics of random partial orders.
+
+This work was conducted with AI assistance (Claude, Anthropic), as noted in the acknowledgments. The manuscript is not under consideration elsewhere.
+
+Sincerely,
+Matt Loftus
+Independent Researcher
+matthew.a.loftus@gmail.com

@@ -1,0 +1,16 @@
+Dear Editor,
+
+I am writing to submit the manuscript "The Sorkin-Johnston vacuum on causal sets and causal dynamical triangulations: a cross-approach comparison" for consideration in Physical Review D.
+
+This paper presents the first direct comparison of the Sorkin-Johnston (SJ) vacuum across two independent discretizations of spacetime: causal sets and causal dynamical triangulations (CDT). Using identical numerical methods on both frameworks, we find that CDT correctly reproduces the expected central charge c = 1 for a free massless scalar in 1+1D, while causal sets yield a diverging effective central charge. We identify the precise mechanism: a Kronecker product decomposition of CDT's antisymmetrized causal matrix reduces the spectral problem from N to T dimensions, giving n_pos = floor(T/2) positive eigenvalues. This dimensional reduction, absent in causal sets, explains the central charge discrepancy. The result is fragile -- 5% within-slice disorder doubles c_eff -- but robust to vertex thinning, confirming that CDT's layered structure, not its density, is responsible.
+
+The paper also establishes that GUE-like spectral statistics are universal across both discretizations, identifying this as a shared property of discrete Lorentzian field theory.
+
+This work is suitable for Physical Review D because it directly addresses a foundational question in quantum gravity: how different discretization schemes affect quantum field theory on discrete spacetimes. The cross-approach methodology and the analytic Kronecker product theorem are new contributions to the field.
+
+This work was conducted with AI assistance (Claude, Anthropic), as noted in the paper's acknowledgments. The manuscript is not under consideration elsewhere.
+
+Sincerely,
+Matt Loftus
+Independent Researcher
+matthew.a.loftus@gmail.com

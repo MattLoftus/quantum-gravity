@@ -1,0 +1,16 @@
+Dear Editor,
+
+I am writing to submit the manuscript "Hasse diagram geometry of causal sets: algebraic connectivity, link fraction, and the Benincasa-Dowker phase transition" for consideration in Physical Review D.
+
+This paper introduces spectral graph theory on the Hasse diagram (link graph) as a new tool for causal set quantum gravity. While most causal set observables use the transitive closure of the partial order, we show that the minimal, irreducible structure -- the Hasse diagram -- carries rich and complementary geometric information.
+
+Our main findings are: (1) The Fiedler value (algebraic connectivity) of the Hasse Laplacian is 50x larger for Minkowski-embedded causal sets than for density-matched random DAGs, scaling as lambda_2 ~ N^{0.318} (R^2 = 0.993). (2) The Fiedler value jumps by 74% across the Benincasa-Dowker phase transition while the ordering fraction changes by only 1%, revealing that the transition restructures link topology without significantly altering the number of causal relations. (3) The link fraction (ratio of irreducible to total relations) provides a perfectly monotonic order parameter for the BD transition with a 60% jump. (4) The Fiedler value encodes embedding dimension via monotonic decrease with d, though it vanishes for d >= 4 where Hasse diagrams become disconnected.
+
+These results establish a novel class of observables for causal set theory based on the Hasse diagram's spectral properties rather than transitive-closure-based quantities. The paper connects spectral graph theory, a mature mathematical field, to open questions in quantum gravity.
+
+This work was conducted with AI assistance (Claude, Anthropic), as noted in the acknowledgments. The manuscript is not under consideration elsewhere.
+
+Sincerely,
+Matt Loftus
+Independent Researcher
+matthew.a.loftus@gmail.com

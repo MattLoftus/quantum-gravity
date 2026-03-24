@@ -16,7 +16,7 @@
 \date{\today}
 
 \begin{abstract}
-We study the Hasse diagram (link graph) of causal sets sampled from the Benincasa-Dowker partition function and find that its spectral and topological properties sharply distinguish manifold-like from non-manifold configurations. The algebraic connectivity (Fiedler value $\lambda_2$) of the Hasse Laplacian is $\sim$50 times larger for 2-orders than for random directed acyclic graphs with matched density, and increases with system size ($\lambda_2 = 0.57 \to 0.79$ for $N = 30 \to 70$), demonstrating that Minkowski-embedded causal sets have high algebraic connectivity in their Hasse diagrams ($\lambda_2 \sim N^{0.318 \pm 0.012}$, $R^2 = 0.993$). The Fiedler value also encodes the embedding dimension, decreasing monotonically from $\lambda_2 \approx 0.78$ ($d=2$) to $\lambda_2 \approx 0$ ($d \geq 4$), where the Hasse diagram becomes disconnected---a fundamental limitation of this observable in physically relevant dimensions. Across the Benincasa-Dowker phase transition, the Fiedler value jumps by 74\% while the total ordering fraction changes by only 1\%, showing that the transition restructures the link topology without significantly altering the number of causal relations. The link fraction (ratio of irreducible to total relations) provides a complementary order parameter that is perfectly monotonic across the transition with a 60\% jump. These results establish the Hasse diagram as a rich geometric probe of causal set structure, complementing observables based on the transitive closure.
+We study the Hasse diagram (link graph) of causal sets sampled from the Benincasa-Dowker partition function and find that its spectral and topological properties sharply distinguish manifold-like from non-manifold configurations. The algebraic connectivity (Fiedler value $\lambda_2$) of the Hasse Laplacian is $6$--$80$ times larger for 2-orders than for random directed acyclic graphs with matched density at small $N$, and increases with system size ($\lambda_2 = 0.57 \to 0.79$ for $N = 30 \to 70$). At larger system sizes ($N > 100$), the Fiedler value \emph{saturates} at $\lambda_2 \approx 1.4$--$1.6$, scaling as $\lambda_2 \sim N^{0.054}$---dramatically slower than the small-$N$ fit of $N^{0.32}$ would suggest. The Fiedler value also encodes the embedding dimension, decreasing monotonically from $\lambda_2 \approx 0.78$ ($d=2$) to $\lambda_2 \approx 0$ ($d \geq 4$), at which point the Hasse diagram becomes disconnected---a fundamental limitation of this observable in physically relevant dimensions. Across the Benincasa-Dowker phase transition, the Fiedler value jumps by 74\% while the total ordering fraction changes by only 1\%, showing that the transition restructures the link topology without significantly altering the number of causal relations. The link fraction (ratio of irreducible to total relations) provides a complementary order parameter that is perfectly monotonic across the transition with a 60\% jump. These results establish the Hasse diagram as a rich geometric probe of causal set structure, complementing observables based on the transitive closure.
 \end{abstract}
 
 \maketitle
@@ -60,11 +60,11 @@ $N$ & $\lambda_2$ (2-order) & $\lambda_2$ (DAG) & Ratio \\
 \label{tab:fiedler}
 \end{table}
 
-The 2-order Hasse diagram has algebraic connectivity $\sim$6--79$\times$ larger than density-matched random DAGs (Table~\ref{tab:fiedler}). The ratio grows with $N$ because $\lambda_2$ increases for 2-orders but decreases for random DAGs. This means Minkowski-embedded causal sets have high algebraic connectivity in their Hasse diagrams, in contrast to random DAGs whose Hasse diagrams fragment into near-trees.
+The 2-order Hasse diagram has algebraic connectivity 6--$79\times$ larger than that of density-matched random DAGs (Table~\ref{tab:fiedler}). The ratio grows with $N$ because $\lambda_2$ increases for 2-orders but decreases for random DAGs. This means Minkowski-embedded causal sets have high algebraic connectivity in their Hasse diagrams, in contrast to random DAGs whose Hasse diagrams fragment into near-trees.
 
-A power-law fit to the Fiedler value gives $\lambda_2 \sim N^{0.318 \pm 0.012}$ with $R^2 = 0.993$, confirming systematic growth with system size. We note, however, that this does \emph{not} establish an expander family in the strict sense: the maximum degree $d_{\max}$ grows as $\sim\!N^{0.45}$, faster than $\lambda_2 \sim N^{0.32}$, so the Cheeger ratio $\lambda_2 / d_{\max} \to 0$ as $N \to \infty$. The Hasse diagrams have high algebraic connectivity but are not expanders.
+A power-law fit to the Fiedler value over $N = 30$--$70$ gives $\lambda_2 \sim N^{0.318 \pm 0.012}$ with $R^2 = 0.993$, but this small-$N$ scaling \emph{does not persist}. At $N > 100$, the Fiedler value saturates at $\lambda_2 \approx 1.4$--$1.6$, with the large-$N$ scaling dramatically reduced to $\lambda_2 \sim N^{0.054}$. The saturation is a critical correction: the Hasse diagram's algebraic connectivity does not grow without bound. This also means the Cheeger ratio $\lambda_2 / d_{\max} \to 0$ as $N \to \infty$ (since $d_{\max} \sim N^{0.45}$), confirming that the Hasse diagrams are not expanders.
 
-We note that the null DAGs are constructed by generating a random partial order with the same ordering fraction as the 2-order, then computing its transitive reduction (Hasse diagram). The comparison is therefore between Hasse diagrams of geometrically embedded and non-embedded partial orders at matched density---not between arbitrary random graphs. The geometric embedding of 2-orders into Minkowski spacetime forces the links to form a well-connected skeleton.
+We note that the null DAGs are constructed by generating a random partial order with the same ordering fraction as the 2-order, then computing its transitive reduction (Hasse diagram). The comparison is therefore between Hasse diagrams of geometrically embedded and non-embedded partial orders at matched density, not between arbitrary random graphs. The geometric embedding of 2-orders into Minkowski spacetime forces the links to form a well-connected skeleton.
 
 \subsection{Across the BD phase transition}
 
@@ -138,7 +138,9 @@ Second, the independence number (largest set of mutually non-adjacent vertices i
 
 \textbf{1. The Hasse diagram as geometric probe.} Most causal set observables use the transitive closure. We have shown that the Hasse diagram---the minimal, irreducible causal structure---carries complementary geometric information. Its algebraic connectivity sharply distinguishes manifold-like causets from random DAGs, is sensitive to the BD phase transition, and encodes the embedding dimension.
 
-\textbf{2. High connectivity and locality.} The high Fiedler value of Minkowski-embedded causets ($\lambda_2 \sim N^{0.32}$) means the Hasse diagram is well-connected, though not a true expander family (since $d_{\max} \sim N^{0.45}$ grows faster). Physically, the high algebraic connectivity reflects the locality of Minkowski spacetime: every spacetime region is connected to every other by short chains of links, with no bottlenecks. Random DAGs lack this spatial locality, producing fragmented Hasse diagrams with low connectivity. The triangle-free property (girth $\geq 4$) is a direct consequence of transitivity in the partial order.
+\textbf{2. High connectivity and locality.} The Fiedler value of Minkowski-embedded causets saturates at $\lambda_2 \approx 1.4$--$1.6$ for $N > 100$ (scaling as $N^{0.054}$), much slower than the small-$N$ apparent scaling of $N^{0.32}$. Despite this saturation, the Fiedler value remains substantially higher than that of random DAGs at all $N$ tested. The Hasse diameter reaches 6 at $N = 3000$ and grows as $N^{0.11}$---\emph{not} $\Theta(\sqrt{N})$ as might be expected from the Vershik-Kerov chain scaling. Physically, the high but bounded algebraic connectivity reflects the locality of Minkowski spacetime: every spacetime region is connected to every other by short chains of links, with no bottlenecks. Random DAGs lack this spatial locality, producing fragmented Hasse diagrams with low connectivity. The triangle-free property (girth $\geq 4$) is a direct consequence of transitivity in the partial order.
+
+\textbf{2b. Spectral embedding.} A spectral embedding using the 19 smallest eigenvectors of the Hasse Laplacian achieves $R^2 = 0.83$--$0.91$ for reconstructing embedding coordinates, confirming that the Hasse Laplacian encodes the geometric layout of the causal set.
 
 \textbf{3. The transition restructures links, not relations.} The BD transition changes the Hasse diagram topology while preserving the total number of causal relations. This complements the interval entropy perspective (Paper A), which focuses on the distribution of interval sizes. Together, interval entropy and link fraction provide a complete characterization: the transition concentrates intervals onto direct links (high $\ell$, low $H$).
 
@@ -146,7 +148,7 @@ Second, the independence number (largest set of mutually non-adjacent vertices i
 
 \section{Conclusion}
 
-The Hasse diagram of causal sets carries rich geometric information that complements transitive-closure-based observables. The algebraic connectivity is $\sim$50$\times$ larger for Minkowski-embedded causets than for random DAGs and scales as $\lambda_2 \sim N^{0.318 \pm 0.012}$ ($R^2 = 0.993$), though $d_{\max} \sim N^{0.45}$ grows faster, so the Hasse diagrams are not a true expander family. The Fiedler value jumps by 74\% at the BD phase transition and encodes the embedding dimension via monotonic decrease with $d$. The Hasse diagram is triangle-free (girth $\geq 4$) with independence number $\alpha \sim N^{0.83}$. The link fraction provides a perfectly monotonic order parameter for the BD transition, capturing the restructuring of irreducible causal relations. These results establish spectral graph theory on the Hasse diagram as a new tool for causal set quantum gravity.
+The Hasse diagram of causal sets carries rich geometric information that complements transitive-closure-based observables. The algebraic connectivity is $6$--$80\times$ larger for Minkowski-embedded causets than for random DAGs at small $N$, scaling as $\lambda_2 \sim N^{0.32}$ for $N = 30$--$70$, but \emph{saturating} at $\lambda_2 \approx 1.4$--$1.6$ for $N > 100$ (large-$N$ scaling $\sim\!N^{0.054}$). The Hasse diameter reaches 6 at $N = 3000$, growing as $N^{0.11}$. The Fiedler value jumps by 74\% at the BD phase transition and encodes the embedding dimension via monotonic decrease with $d$. A spectral embedding with 19 eigenvectors achieves $R^2 = 0.83$--$0.91$. The Hasse diagram is triangle-free (girth $\geq 4$) with independence number $\alpha \sim N^{0.83}$. The link fraction provides a perfectly monotonic order parameter for the BD transition, capturing the restructuring of irreducible causal relations. These results establish spectral graph theory on the Hasse diagram as a new tool for causal set quantum gravity, with the caveat that the Fiedler value saturates at large $N$ rather than growing without bound.
 
 \begin{acknowledgments}
 This work was conducted with assistance from Claude (Anthropic).
@@ -179,7 +181,7 @@ Ph.D.\ thesis, MIT (1988).
 D.~M.~T.~Benincasa and F.~Dowker,
 ``The scalar curvature of a causal set,''
 Phys.\ Rev.\ Lett.\ \textbf{104}, 181301 (2010),
-\href{https://arxiv.org/abs/0711.2460}{arXiv:0711.2460}.
+\href{https://arxiv.org/abs/1001.2725}{arXiv:1001.2725}.
 
 \bibitem{fiedler1973}
 M.~Fiedler,
@@ -193,7 +195,7 @@ F.~R.~K.~Chung,
 \bibitem{glaser2018}
 L.~Glaser, D.~O'Connor, and S.~Surya,
 ``Finite size scaling in 2d causal set quantum gravity,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 045006 (2018),
 \href{https://arxiv.org/abs/1706.06432}{arXiv:1706.06432}.
 
 \bibitem{brightwell1991}
@@ -209,7 +211,7 @@ M.~Loftus,
 \bibitem{loomis2018}
 S.~P.~Loomis and S.~Carlip,
 ``Suppression of non-manifold-like sets in the causal set path integral,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 065003 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
 \href{https://arxiv.org/abs/1709.00064}{arXiv:1709.00064}.
 
 \end{thebibliography}

@@ -1,0 +1,27 @@
+Dear Professor Surya,
+
+I am forwarding this arXiv endorsement request for the gr-qc category. I would be grateful if you would consider endorsing me.
+
+I have a physics and mathematics background (double major, with undergraduate research on radiation detectors) and have been working independently on computational causal set quantum gravity. The work builds extensively on your research on the BD phase transition and the 2-order representation.
+
+I have completed eight papers ready for submission, including:
+
+- A Kronecker product theorem proving why the SJ vacuum on CDT reproduces c=1 while causal sets do not: C^T-C = A_T x J, giving n_pos = floor(T/2) exactly (by Sylvester's law of inertia)
+
+- Exact combinatorial results for random 2-orders: master interval formula, E[links] = (N+1)H_N - 2N, antichain scaling via Vershik-Kerov, and 13+ additional theorems
+
+- Universal GUE spectral statistics of the Pauli-Jordan operator across all phases, dimensions, and causet types (with identification of a phase-mixing artifact in earlier measurements)
+
+- Spectral graph theory of Hasse diagrams, interval entropy as a BD order parameter, and a cross-approach SJ vacuum comparison
+
+All code (~72,000 lines of Python, ~110 experiments) will be released on GitHub. The work was conducted with AI assistance (Claude, Anthropic), noted in each paper's acknowledgments.
+
+I am happy to share any manuscripts if you would like to review them first. The endorsement link and code are in the forwarded email below.
+
+Thank you for your time.
+
+Best regards,
+Matt Loftus
+matthew.a.loftus@gmail.com
+
+--- Forwarded arXiv endorsement request below ---

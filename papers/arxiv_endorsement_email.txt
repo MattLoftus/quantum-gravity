@@ -1,0 +1,54 @@
+Subject: arXiv endorsement request for gr-qc (causal set quantum gravity)
+
+Dear Professor [Surya / Glaser / Dowker],
+
+I am an independent researcher and I am writing to ask if you would be willing to endorse me for arXiv submissions in the gr-qc category.
+
+I have completed a computational study of causal set quantum gravity, resulting in eight papers that I believe would be of interest to the causal set community. The work includes:
+
+- A cross-approach comparison of the Sorkin-Johnston vacuum on causal sets and CDT, with an analytic theorem (Kronecker product decomposition) explaining why CDT reproduces c=1 while causal sets do not
+
+- Spectral graph theory of causal set Hasse diagrams, showing that algebraic connectivity (Fiedler value) sharply distinguishes manifold-like causets from random DAGs
+
+- Exact combinatorial results for random 2-orders, including a master interval formula, the Vershik-Kerov antichain theorem applied to causal sets, and exact partition functions for small N
+
+- An analytic proof chain explaining the entanglement-connectivity correlation on 2-orders (discrete ER=EPR)
+
+- Universal GUE spectral statistics of the Pauli-Jordan operator, with identification of a phase-mixing artifact in earlier measurements
+
+- Interval entropy as a new order parameter for the Benincasa-Dowker transition, including a novel three-phase structure in 4D
+
+The papers build extensively on your work [customize: e.g., "on finite-size scaling of the BD transition" for Glaser, "on the SJ vacuum" for Surya, "on the BD action" for Dowker]. All code (~66,000 lines of Python, ~100 experiments) will be released publicly on GitHub.
+
+I would be happy to share any or all of the manuscripts if you would like to review them before endorsing. The endorsement would be for the gr-qc category. I may also submit one paper (exact combinatorics of random 2-orders) to math.CO.
+
+Thank you for considering this request.
+
+Best regards,
+Matt Loftus
+matthew.a.loftus@gmail.com
+Independent researcher
+
+
+---
+NOTES FOR CUSTOMIZATION:
+
+For Sumati Surya (surya@rri.res.in):
+- She is the leading authority on the BD transition and 2-order methodology
+- Cite her 2012 and 2019 papers specifically
+- Customize: "your work on the BD phase transition and the 2-order representation"
+
+For Lisa Glaser (lisa.glaser@univie.ac.at):
+- She did the definitive finite-size scaling study (Glaser et al. 2018)
+- Customize: "your finite-size scaling analysis of the 2D BD transition"
+
+For Fay Dowker (f.dowker@imperial.ac.uk):
+- She co-invented the BD action and is a leading causal set theorist
+- Customize: "your foundational work on the Benincasa-Dowker action"
+
+For Yasaman Yazdi:
+- She worked on SJ vacuum entanglement entropy
+- Customize: "your work on entanglement entropy in causal set theory"
+
+Pick ONE person to email first. Surya or Glaser are the best choices
+because your work most directly extends theirs.

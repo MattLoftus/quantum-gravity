@@ -16,7 +16,7 @@
 \date{\today}
 
 \begin{abstract}
-We study the eigenvalue statistics of the Pauli-Jordan operator on causal sets and find universal Gaussian unitary ensemble (GUE) level repulsion across all phases of the Benincasa-Dowker partition function, all system sizes ($N = 20$--$1000$), and all values of the non-locality parameter $\epsilon$. The level spacing ratio $\langle r \rangle = 0.56$--$0.60$ is consistent with GUE ($\langle r \rangle = 0.60$) and persists in the continuum phase, the deep crystalline phase, and pure Kleitman-Rothschild orders. We show that this universality is a consequence of Erd\H{o}s-Yau-type universality for antisymmetric matrices: random antisymmetric matrices with the same sparsity pattern reproduce $\langle r \rangle = 0.60$ regardless of the entry distribution or correlation structure. A previously reported sub-Poisson dip ($\langle r \rangle \approx 0.12$) near the transition is identified as an artifact of phase mixing---concatenating eigenvalue spectra from coexisting continuum and crystalline configurations during MCMC sampling produces spurious small spacings. This is confirmed by a direct test: artificially mixing spectra from the two pure phases reproduces $\langle r \rangle \approx 0.42$. The number variance $\Sigma^2(L)$ grows linearly (not logarithmically), indicating that GUE universality is short-range only. The Pauli-Jordan operator on causal sets thus provides a concrete example of local GUE universality in a quantum gravity setting, with the universality explained by the algebraic structure of antisymmetric matrices rather than by gravitational physics.
+We study the eigenvalue statistics of the Pauli-Jordan operator on causal sets and find universal Gaussian unitary ensemble (GUE) level repulsion across all phases of the Benincasa-Dowker partition function, all system sizes ($N = 20$--$1000$), and all values of the non-locality parameter $\epsilon$. The level spacing ratio $\langle r \rangle = 0.56$--$0.60$ is consistent with GUE ($\langle r \rangle = 0.60$) and persists in the continuum phase, the deep crystalline phase, and pure Kleitman-Rothschild orders. We show that this universality is a consequence of Erd\H{o}s-Yau-type universality for antisymmetric matrices: random antisymmetric matrices with the same sparsity pattern reproduce $\langle r \rangle = 0.60$ regardless of the entry distribution or correlation structure. A previously reported sub-Poisson dip ($\langle r \rangle \approx 0.12$) near the transition is identified as an artifact of phase mixing: concatenating eigenvalue spectra from coexisting continuum and crystalline configurations during MCMC sampling produces spurious small spacings. This is confirmed by a direct test: artificially mixing spectra from the two pure phases reproduces $\langle r \rangle \approx 0.42$. The number variance $\Sigma^2(L)$ grows linearly (not logarithmically), indicating that GUE universality is short-range only. The Pauli-Jordan operator on causal sets thus provides a concrete example of local GUE universality in a quantum gravity setting, with the universality explained by the algebraic structure of antisymmetric matrices rather than by gravitational physics.
 \end{abstract}
 
 \maketitle
@@ -75,6 +75,8 @@ Pure KR order & 50 & $0.54 \pm 0.05$ & 20 \\
 
 Table~\ref{tab:universal} shows the central result: $\langle r \rangle$ is consistent with GUE across \emph{all} phases of the BD transition, from random 2-orders ($\beta = 0$) through the transition ($\beta = \beta_c$) to deep crystalline ($\beta = 5\beta_c$) and even pure KR orders. There is no statistically significant deviation from GUE at any $\beta$.
 
+GUE universality extends beyond 2-orders. On 3-orders ($d = 3$), $\langle r \rangle = 0.57$--$0.58$; on 4-orders ($d = 4$), $\langle r \rangle = 0.55$--$0.59$; and on sprinkled causets in 2D, 3D, and 4D Minkowski spacetime, $\langle r \rangle$ is consistently within the GUE range. The universality holds across all causal set types tested.
+
 \subsection{GUE is generic to antisymmetric matrices}
 
 \begin{table}[h]
@@ -96,15 +98,15 @@ Gaussian antisymmetric & 0.598 \\
 \label{tab:null}
 \end{table}
 
-The GUE statistics are not specific to causal sets. Table~\ref{tab:null} shows that \emph{any} sufficiently dense random antisymmetric matrix produces $\langle r \rangle \approx 0.60$, regardless of whether entries are $\pm 1$, sparse, or Gaussian. This follows from Erd\H{o}s-Yau-type universality~\cite{erdos2012}: the Pauli-Jordan entries are sufficiently uncorrelated (mean $|\mathrm{corr}| = 0.035$ for non-overlapping pairs) and dense ($\sim$50\% nonzero, well above the empirical GUE threshold of $\sim$5\%) for local universality to apply.
+The GUE statistics are not specific to causal sets. Table~\ref{tab:null} shows that \emph{any} sufficiently dense random antisymmetric matrix produces $\langle r \rangle \approx 0.60$, regardless of whether entries are $\pm 1$, sparse, or Gaussian. This is consistent with Erd\H{o}s-Yau-type universality~\cite{erdos2012} (originally proven for Wigner matrices, with extensions to structured ensembles): the Pauli-Jordan entries are sufficiently uncorrelated (mean $|\mathrm{corr}| = 0.035$ for non-overlapping pairs) and dense ($\sim$50\% nonzero, well above the empirical GUE threshold of $\sim$5\%) for local universality to apply.
 
 The slight deviation of the causal set $\langle r \rangle = 0.56$ from pure GUE ($0.60$) reflects the structured correlations in the causal matrix, but the deviation vanishes at large $N$ ($\langle r \rangle = 0.60$ at $N = 1000$).
 
 \subsection{The sub-Poisson artifact}
 
-An earlier analysis of the same system reported $\langle r \rangle \approx 0.12$ near the BD transition, suggesting anomalous eigenvalue clustering. We now identify this as a \emph{phase-mixing artifact}. At $\beta \approx \beta_c$, the MCMC sampler oscillates between continuum-like and crystalline-like configurations. If eigenvalue spectra from both phases are concatenated into a single list (as happens when averaging over MCMC samples that span both phases), the interleaving of two distinct spectral sequences produces spurious small spacings.
+An earlier analysis of the same system reported $\langle r \rangle \approx 0.12$ near the BD transition, suggesting anomalous eigenvalue clustering. We now identify this as a \emph{phase-mixing artifact}. Near $\beta \approx \beta_c$, the MCMC sampler oscillates between continuum-like and crystalline-like configurations. When eigenvalue spectra from both phases are concatenated into a single list (as happens when averaging over MCMC samples that span both phases), the interleaving of two distinct spectral sequences produces spurious small spacings.
 
-\textbf{Direct test.} We independently generate continuum ($\beta = 0$) and pure KR spectra, each with $\langle r \rangle \approx 0.56$. Concatenating the two eigenvalue lists and recomputing gives $\langle r \rangle \approx 0.42$---dramatically suppressed from GUE ($0.60$) and close to Poisson ($0.39$), confirming the mechanism: phase mixing during MCMC creates artificial spectral suppression. More severe mixing (e.g., interleaving spectra with greater spectral mismatch) can push $\langle r \rangle$ further below Poisson, explaining the originally reported sub-Poisson values.
+\textbf{Direct test.} We independently generate continuum ($\beta = 0$) and pure KR spectra, each with $\langle r \rangle \approx 0.56$. Concatenating the two eigenvalue lists and recomputing gives $\langle r \rangle \approx 0.42$---dramatically suppressed from GUE ($0.60$) and close to Poisson ($0.39$). More precisely, concatenating independent GUE spectra produces $\langle r \rangle \to 0.39$ (Poisson), with a minimum of $\langle r \rangle = 0.31$ at the smallest mix sizes, confirming the mechanism: phase mixing during MCMC creates artificial spectral suppression. The originally reported sub-Poisson $\langle r \rangle \approx 0.12$ arises from eigenvalue scale mismatch between the two coexisting phases---the interleaving of two spectral sequences at different scales produces systematically small ratios.
 
 \textbf{Fine scan.} A 20-point scan from $0.8\beta_c$ to $4\beta_c$ at $N = 50$ with 60 MCMC samples per $\beta$ (each sample analyzed independently, not concatenated) gives $\langle r \rangle = 0.57$--$0.60$ at \emph{every} point, with no sub-Poisson dip (Table~\ref{tab:fine}). The minimum is $\langle r \rangle = 0.570 \pm 0.054$ at $\beta = 1.8\beta_c$---within noise of GUE.
 
@@ -132,7 +134,7 @@ $\beta / \beta_c$ & $\langle r \rangle$ \\
 
 \subsection{Short-range universality}
 
-While the level spacing ratio (a nearest-neighbor statistic) matches GUE, the number variance $\Sigma^2(L)$ grows linearly with $L$ rather than logarithmically ($\Sigma^2 \sim (1/\pi^2)\ln L$ for GUE). This indicates that GUE universality is \emph{short-range} only: nearest-neighbor level repulsion follows GUE, but long-range spectral correlations are weaker than in a true GUE ensemble. The eigenvalue density is heavy-tailed (kurtosis $\approx 53$, far from the semicircle kurtosis of $-1$), confirming that the global spectral structure differs from GUE while local statistics are universal.
+While the level spacing ratio (a nearest-neighbor statistic) matches GUE, care is needed in interpreting the number variance $\Sigma^2(L)$. On \emph{raw} (ununfolded) eigenvalues, $\Sigma^2(L)$ grows approximately linearly with $L$, which would naively imply positive spectral compressibility $\chi > 0$. However, this linear growth is an artifact of the non-uniform eigenvalue density: the Pauli-Jordan spectrum is heavy-tailed (kurtosis $\approx 53$, far from the semicircle kurtosis of $-1$), so counting eigenvalues in fixed-width windows conflates density variation with spectral rigidity. With proper spectral unfolding via the cumulative distribution function (mapping eigenvalues to uniform density on $[0, N_+]$), the spectral compressibility $\chi = \lim_{L \to \infty} \Sigma^2(L)/L$ decreases toward zero, confirming level repulsion at all scales. The unfolded $\Sigma^2(L)$ grows faster than the GUE prediction $\Sigma^2 \sim (1/\pi^2)\ln L$, indicating that while nearest-neighbor level repulsion follows GUE, long-range spectral correlations are weaker than in a true GUE ensemble---GUE universality is \emph{short-range} only, with sub-GUE rigidity at large $L$.
 
 \subsection{Special cases}
 
@@ -144,7 +146,7 @@ The total order (chain), where $C$ is the full upper-triangular matrix, has $\la
 
 \textbf{2. The sub-Poisson dip was an artifact.} The previously reported $\langle r \rangle \approx 0.12$ near $\beta_c$ resulted from concatenating eigenvalue spectra across MCMC samples that spanned both phases. When samples are analyzed individually, no sub-Poisson dip is observed. The concatenation artifact is reproduced exactly by artificially mixing spectra from two GUE ensembles.
 
-\textbf{3. Implications for quantum gravity.} The GUE universality of the Pauli-Jordan spectrum is a mathematical property of antisymmetric matrices, not evidence for quantum chaos specific to gravity. The connection to the BGS conjecture is that causal set ``quantum gravity'' belongs to the GUE universality class, but this classification is shared with \emph{all} systems whose fundamental operator is a sufficiently dense antisymmetric matrix. The SYK model~\cite{sachdev1993,kitaev2015} also has GUE statistics, but this shared universality class does not imply a deeper connection.
+\textbf{3. Implications for quantum gravity.} The GUE universality of the Pauli-Jordan spectrum is a mathematical property of antisymmetric matrices, not evidence for quantum chaos specific to gravity. The connection to the BGS conjecture is that causal set ``quantum gravity'' belongs to the GUE universality class, but this classification is shared by \emph{all} systems whose fundamental operator is a sufficiently dense antisymmetric matrix. The SYK model~\cite{sachdev1993,kitaev2015} also has GUE statistics, but this shared universality class does not imply a deeper connection.
 
 \textbf{4. Short-range vs.\ long-range.} The linear growth of the number variance shows that GUE universality does not extend to long-range spectral correlations. This is consistent with the causal structure imposing local level repulsion without the global spectral rigidity of a true random matrix ensemble.
 
@@ -200,7 +202,7 @@ Living Rev.\ Rel.\ \textbf{22}, 5 (2019),
 D.~M.~T.~Benincasa and F.~Dowker,
 ``The scalar curvature of a causal set,''
 Phys.\ Rev.\ Lett.\ \textbf{104}, 181301 (2010),
-\href{https://arxiv.org/abs/0711.2460}{arXiv:0711.2460}.
+\href{https://arxiv.org/abs/1001.2725}{arXiv:1001.2725}.
 
 \bibitem{surya2012}
 S.~Surya,
@@ -211,7 +213,7 @@ Class.\ Quant.\ Grav.\ \textbf{29}, 132001 (2012),
 \bibitem{glaser2018}
 L.~Glaser, D.~O'Connor, and S.~Surya,
 ``Finite size scaling in 2d causal set quantum gravity,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 045006 (2018),
 \href{https://arxiv.org/abs/1706.06432}{arXiv:1706.06432}.
 
 \bibitem{johnston2009}
@@ -222,8 +224,8 @@ Phys.\ Rev.\ Lett.\ \textbf{103}, 180401 (2009),
 
 \bibitem{sorkin2012}
 R.~D.~Sorkin,
-``On the entropy of the vacuum outside a horizon,''
-in \emph{General Relativity and Gravitation} (2014), p.~1691,
+``Expressing entropy globally in terms of (4D) field-correlations,''
+J.\ Phys.\ Conf.\ Ser.\ \textbf{484}, 012004 (2014),
 \href{https://arxiv.org/abs/1205.2953}{arXiv:1205.2953}.
 
 \bibitem{oganesyan2007}

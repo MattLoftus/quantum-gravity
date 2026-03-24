@@ -16,7 +16,7 @@
 \date{\today}
 
 \begin{abstract}
-We introduce \emph{interval entropy}---the Shannon entropy of the order-interval size distribution---as a new observable for causal set quantum gravity. Using Markov chain Monte Carlo simulations of 2-orders weighted by the Benincasa-Dowker action, we show that interval entropy sharply distinguishes the continuum and non-manifold phases of the known first-order phase transition in two dimensions. In the continuum phase, interval entropy $H \approx 2.4$, reflecting a broad distribution of interval sizes characteristic of manifold-like causal structure. In the crystalline phase, $H \approx 0.3$, indicating that nearly all order relations are direct links. The transition is simultaneous with the action-susceptibility peak and sharpens with system size, consistent with a first-order transition. Crucially, random directed acyclic graphs with matched link density yield $H \approx 2.1$, demonstrating that interval entropy captures genuinely causal structure rather than mere connectivity. We also show that the widely-used spectral dimension computed from the link graph is purely a function of link density and cannot distinguish the two phases. In four dimensions, using 4-orders at $N = 30$--$70$, interval entropy reveals a richer phase structure than 2D: the entropy dips sharply at the transition but then \emph{recovers} in a deep ordered phase, suggesting at least three distinct regimes. The 4D action susceptibility grows to $\chi_S \approx 43{,}000$ at $N = 70$, indicating an extremely strong first-order transition.
+We introduce \emph{interval entropy}, the Shannon entropy of the order-interval size distribution, as a new observable for causal set quantum gravity. Using Markov chain Monte Carlo simulations of 2-orders weighted by the Benincasa-Dowker action, we show that interval entropy sharply distinguishes the continuum and non-manifold phases of the known first-order phase transition in two dimensions. In the continuum phase, interval entropy $H \approx 2.4$, reflecting a broad distribution of interval sizes characteristic of manifold-like causal structure. In the crystalline phase, $H \approx 0.3$, indicating that nearly all order relations are direct links. The transition is simultaneous with the action-susceptibility peak and sharpens with system size, consistent with a first-order transition. Crucially, random directed acyclic graphs with matched link density yield $H \approx 2.1$, demonstrating that interval entropy captures genuine causal structure rather than mere connectivity. We also show that the widely-used spectral dimension computed from the link graph is purely a function of link density and cannot distinguish the two phases. In four dimensions, using 4-orders at $N = 30$--$70$, interval entropy reveals a richer phase structure than 2D: the entropy dips sharply at the transition but then \emph{recovers} in a deep ordered phase, suggesting at least three distinct regimes. The 4D action susceptibility grows to $\chi_S \approx 43{,}000$ at $N = 70$, indicating an extremely strong first-order transition.
 \end{abstract}
 
 \maketitle
@@ -33,7 +33,7 @@ In this paper, we introduce a new observable, \emph{interval entropy}, and show 
 
 \subsection{2-orders and the BD action}
 
-A \emph{2-order} on $N$ elements is defined by two permutations $U$ and $V$ of $\{1, \ldots, N\}$. Element $i$ precedes element $j$ if and only if $u_i < u_j$ and $v_i < v_j$. Every 2-order faithfully embeds into 2-dimensional Minkowski spacetime~\cite{rideout2000}, making this the natural sample space for 2D causal set quantum gravity.
+A \emph{2-order} on $N$ elements is defined by two permutations $U$ and $V$ of $\{1, \ldots, N\}$. Element $i$ precedes element $j$ (written $i \prec j$) if and only if $u_i < u_j$ and $v_i < v_j$. Every 2-order faithfully embeds into 2-dimensional Minkowski spacetime~\cite{brightwell1991}, making this the natural sample space for 2D causal set quantum gravity.
 
 The non-local Benincasa-Dowker action for a causal set $\mathcal{C}$ in two dimensions is~\cite{benincasa2010,glaser2018}
 \begin{equation}
@@ -114,6 +114,8 @@ $N$ & $\beta_c^{\mathrm{pred}}$ & $\beta_c^{\mathrm{meas}}$ & $\chi_S^{\max}$ & 
 
 The growth of $\chi_S^{\max}$ with $N$ is dramatic: from 30 at $N=50$ to 2784 at $N=150$, consistent with a strong first-order transition. We employ parallel tempering with 8 replicas and swap rates of $23$--$32\%$ to ensure thermalization at large $\beta$. The interval-entropy jump $\Delta H \approx 1$--$2$ is stable across system sizes, confirming $H$ as a robust order parameter.
 
+The systematic discrepancy between the predicted $\beta_c = 6.64/(N\epsilon^2)$ and the measured susceptibility peak, which increases with $N$ (ratio $\beta_c^{\mathrm{meas}}/\beta_c^{\mathrm{pred}} = 1.5$ at $N=50$, $2.0$ at $N=100$, $3.5$ at $N=150$), may reflect the distinction between the thermodynamic critical coupling---where the free energy develops a kink---and the susceptibility peak location, which can shift due to finite-size effects and the asymmetric shape of the action distribution near the transition. At $N = 50$ with $5 \times 10^4$ MCMC steps, thermalization at high $\beta$ remains challenging despite parallel tempering, and the measured $\beta_c$ should be interpreted as the susceptibility peak rather than the true thermodynamic transition point. The predicted $\beta_c$ is derived from the Glaser \emph{et al.}\ scaling relation (rescaled by a factor of 4 for our action convention), which was calibrated at larger $N$ and may receive finite-size corrections that grow at small $N$.
+
 \subsection{Random graph control}
 
 To verify that interval entropy captures causal structure rather than mere connectivity, we compare BD-sampled causal sets with random directed acyclic graphs (DAGs) having matched link density.
@@ -124,17 +126,17 @@ This demonstrates that the low interval entropy in the crystalline phase reflect
 
 \subsection{Failure of link-graph spectral dimension}
 
-The spectral dimension $d_s$, defined via the return probability of a random walk on the link graph, has been widely used to probe emergent geometry in quantum gravity~\cite{carlip2017}. We find that $d_s$ is \emph{not} a useful observable for distinguishing the BD phases.
+The spectral dimension $d_s$, defined via the return probability of a random walk on the link graph, has been widely used to probe emergent geometry in quantum gravity~\cite{carlip2017}. We find that $d_s$ is not a useful observable for distinguishing the BD phases.
 
 The peak spectral dimension increases from $d_s \approx 3.0$ in the continuum phase to $d_s \approx 4.1$ in the crystalline phase. However, random graphs with matched link density yield essentially identical $d_s$ values: link density $L/N = 2.6$ gives $d_s \approx 3.0$, while $L/N = 10.6$ gives $d_s \approx 4.0$, regardless of whether the graph has causal structure.
 
-This establishes that link-graph spectral dimension on causal sets is purely a function of connectivity and does not probe causal geometry. Interval entropy, chain dimension, and layer structure are superior probes of the phase transition.
+This establishes that the link-graph spectral dimension on causal sets is purely a function of connectivity and does not probe causal geometry. Interval entropy, chain dimension, and layer structure are superior probes of the phase transition.
 
 \subsection{Four-dimensional phase structure}
 
 To test whether interval entropy remains useful in the physically relevant dimension, we simulate 4-orders---the intersection of four total orders, which faithfully embed into 4-dimensional Minkowski spacetime---at $N = 30$, $50$, and $70$. We use the local 4D BD action~\cite{benincasa2010}:
 \begin{equation}
-S_{4\mathrm{D}} = \frac{1}{24}\left( N - 4L + 6\mathcal{N}_1 - 4\mathcal{N}_2 \right),
+S_{4\mathrm{D}} = \frac{1}{24}\left( N - 4L + 6\mathcal{N}_1 - 4\mathcal{N}_2 + \mathcal{N}_3 \right),
 \end{equation}
 with Metropolis coordinate-swap dynamics (at each step, two elements are chosen and one of their four coordinates is swapped; $5 \times 10^4$ steps, half discarded as thermalization). We use the local ($\epsilon = 1$) form of the 4D action; the non-local generalization is left for future work.
 
@@ -170,7 +172,7 @@ $\chi_S^{\max}$ & 722 & 3862 & 43288 \\
 \item \textbf{Deep ordered phase} ($\beta \gtrsim 4$): $H$ \emph{recovers} to $\approx 0.67$, $f \approx 0.5$. The interval distribution broadens again, indicating a structurally distinct ordered phase.
 \end{enumerate}
 
-This non-monotonic behavior---absent in 2D---suggests that the 4D BD action admits at least two ordered phases with different interval structure. The recovery of $H$ in the deep ordered phase is particularly striking: the most strongly ordered configurations ($\beta \gg \beta_c$) have \emph{more diverse} interval distributions than the intermediate ones.
+This non-monotonic behavior---absent in 2D---suggests that the 4D BD action admits at least two ordered phases with different interval structure. The recovery of $H$ in the deep ordered phase is particularly striking: the most strongly ordered configurations ($\beta \gg \beta_c$) have \emph{more diverse} interval distributions than the intermediate ones. We also note that sprinkled 4D causets (Poisson sprinkling into $[0,1]^4$ Minkowski) have interval entropy matching that of disordered $d$-orders at the same $N$, confirming that the 2-order and 4-order representations faithfully capture the interval statistics of physically sprinkled causets.
 
 The transition is extremely sharp: $\chi_S^{\max}$ grows from 722 ($N = 30$) to 43{,}288 ($N = 70$), indicating a strong first-order transition that is even more dramatic than the 2D case. We caution that the acceptance rate drops to $\sim$17--22\% at large $\beta$ for $N = 70$; while the qualitative features are stable across system sizes, quantitative precision in the deep ordered phase would benefit from parallel tempering.
 
@@ -213,7 +215,7 @@ Living Rev.\ Rel.\ \textbf{22}, 5 (2019),
 D.~M.~T.~Benincasa and F.~Dowker,
 ``The scalar curvature of a causal set,''
 Phys.\ Rev.\ Lett.\ \textbf{104}, 181301 (2010),
-\href{https://arxiv.org/abs/0711.2460}{arXiv:0711.2460}.
+\href{https://arxiv.org/abs/1001.2725}{arXiv:1001.2725}.
 
 \bibitem{surya2012}
 S.~Surya,
@@ -224,14 +226,13 @@ Class.\ Quant.\ Grav.\ \textbf{29}, 132001 (2012),
 \bibitem{glaser2018}
 L.~Glaser, D.~O'Connor, and S.~Surya,
 ``Finite size scaling in 2d causal set quantum gravity,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 045006 (2018),
 \href{https://arxiv.org/abs/1706.06432}{arXiv:1706.06432}.
 
-\bibitem{rideout2000}
-D.~P.~Rideout and R.~D.~Sorkin,
-``A classical sequential growth dynamics for causal sets,''
-Phys.\ Rev.\ D \textbf{61}, 024002 (2000),
-\href{https://arxiv.org/abs/gr-qc/9904062}{arXiv:gr-qc/9904062}.
+\bibitem{brightwell1991}
+G.~Brightwell and R.~Gregory,
+``Structure of random discrete spacetime,''
+Phys.\ Rev.\ Lett.\ \textbf{66}, 260 (1991).
 
 \bibitem{carlip2017}
 S.~Carlip,
@@ -242,7 +243,7 @@ Class.\ Quant.\ Grav.\ \textbf{34}, 193001 (2017),
 \bibitem{loomis2018}
 S.~P.~Loomis and S.~Carlip,
 ``Suppression of non-manifold-like sets in the causal set path integral,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 065003 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
 \href{https://arxiv.org/abs/1709.00064}{arXiv:1709.00064}.
 
 \bibitem{ambjorn2005}

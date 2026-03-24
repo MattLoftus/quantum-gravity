@@ -1,0 +1,18 @@
+Dear Editor,
+
+I am writing to submit the manuscript "Interval entropy as an order parameter for the phase transition in causal set quantum gravity in two and four dimensions" for consideration in Classical and Quantum Gravity.
+
+This paper introduces interval entropy -- the Shannon entropy of the order-interval size distribution -- as a new observable for causal set quantum gravity and demonstrates its effectiveness as an order parameter for the Benincasa-Dowker phase transition.
+
+In two dimensions, interval entropy drops by 87% across the transition (from H ~ 2.4 to H ~ 0.3), far exceeding the sensitivity of the ordering fraction (~10% change). Crucially, random DAGs with matched link density yield H ~ 2.1, confirming that interval entropy captures genuinely causal structure rather than mere connectivity. We also demonstrate that the widely-used link-graph spectral dimension is purely a function of link density and cannot distinguish the two phases -- an important cautionary result for the field.
+
+In four dimensions, interval entropy reveals a richer phase structure than previously known: beyond the continuum and crystalline phases observed in 2D, the entropy dips sharply at the transition but then recovers in a deep ordered phase, suggesting at least three distinct regimes. The 4D action susceptibility grows explosively (chi_S ~ 43,000 at N = 70), indicating an extremely strong first-order transition.
+
+This paper is well suited to Classical and Quantum Gravity because it introduces a practical new diagnostic tool for causal set simulations, provides the first evidence for a three-phase structure in 4D causal set quantum gravity, and addresses an active debate about the reliability of spectral dimension as a geometric probe.
+
+This work was conducted with AI assistance (Claude, Anthropic), as noted in the acknowledgments. The manuscript is not under consideration elsewhere.
+
+Sincerely,
+Matt Loftus
+Independent Researcher
+matthew.a.loftus@gmail.com

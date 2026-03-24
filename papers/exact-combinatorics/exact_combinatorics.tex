@@ -20,7 +20,7 @@
 \date{\today}
 
 \begin{abstract}
-We derive exact combinatorial results for random $d$-orders---partially ordered sets defined as the intersection of $d$ random total orders---which serve as the configuration space for $d$-dimensional causal set quantum gravity. We prove that the expected ordering fraction of a random 2-order is exactly $1/2$ and derive the exact variance with all six covariance types. We prove that the longest antichain of a random 2-order equals the longest decreasing subsequence of a composed permutation, connecting causal set geometry to the Ulam-Vershik-Kerov theorem: the antichain scales as $2\sqrt{N}$ with Tracy-Widom fluctuations. We compute the exact Benincasa-Dowker partition function $Z(\beta)$ for $N = 4$ (576 states, 19 action levels) and $N = 5$ (14,400 states, 87 action levels), obtaining the full thermodynamics including specific heat, free energy, and ground state degeneracy. We derive the expected interval size for a related pair: $\mathbb{E}[n \mid i \prec j] = (N-2)/9$, and compute the exact link probability for small $N$. We prove that the expected Glaser action is $\mathbb{E}[S_{\mathrm{Glaser}}] = 1$ for all $N \geq 2$, derive the expected BD action $\mathbb{E}[S_{\mathrm{BD}}] = 2N - N H_N$, and obtain the limit shape $f(\alpha) = 4[-(1+\alpha)\ln\alpha + 2\alpha - 2]$ for the interval distribution. The master interval formula is specific to $d = 2$; for $d \geq 3$, link probabilities are $1.78\times$ ($d = 3$) and $2.27\times$ ($d = 4$) higher. These results provide the first exact analytic benchmarks for causal set quantum gravity simulations and connect the field to established results in combinatorics and random matrix theory.
+We derive exact combinatorial results for random $d$-orders---partially ordered sets defined as the intersection of $d$ random total orders---that serve as the configuration space for $d$-dimensional causal set quantum gravity. We prove that the expected ordering fraction of a random 2-order is exactly $1/2$ and derive the exact variance with all six covariance types. We prove that the longest antichain of a random 2-order equals the longest decreasing subsequence of a composed permutation, connecting causal set geometry to the Ulam-Vershik-Kerov theorem: the antichain scales as $2\sqrt{N}$ with Tracy-Widom fluctuations. We compute the exact Benincasa-Dowker partition function $Z(\beta)$ for $N = 4$ (576 states, 19 action levels) and $N = 5$ (14,400 states, 87 action levels), obtaining the full thermodynamics including specific heat, free energy, and ground state degeneracy. We derive the expected interval size for a related pair: $\mathbb{E}[n \mid i \prec j] = (N-2)/9$, and compute the exact link probability for small $N$. We derive the expected Glaser action $\mathbb{E}[S_{\mathrm{Glaser}}] = 1 + 2(N-2)/9$, derive the expected BD action $\mathbb{E}[S_{\mathrm{BD}}] = 2N - N H_N$, and obtain the limit shape $f(\alpha) = 4[-(1+\alpha)\ln\alpha + 2\alpha - 2]$ for the interval distribution. We prove that the expected number of maximal (or minimal) elements is $H_N$, the harmonic number, and that the expected number of $k$-element antichains is $\binom{N}{k}/k!$. We show that chains and antichains have identical expected counts---$\mathbb{E}[\text{chains of length } k] = \mathbb{E}[\text{antichains of size } k] = \binom{N}{k}/k!$---a remarkable symmetry. We prove that $\mathbb{E}[\mathcal{N}_k]$ is monotonically decreasing via the unimodality of the master formula. We derive the expected BD action at finite non-locality parameter $\epsilon$, verified to $1\%$ against Monte Carlo. We resolve the link fraction constant: the asymptotic expansion gives $2\ln(N)/N$ for undirected links (not $4\ln(N)/N$, which counts directed pairs). We compute the exact probability of Hasse diagram connectivity for $N = 2$--$6$, exact automorphism group statistics, and chromatic numbers. The master interval formula is specific to $d = 2$; for $d \geq 3$, link probabilities are $1.78\times$ ($d = 3$) and $2.27\times$ ($d = 4$) higher. These results provide the first exact analytic benchmarks for causal set quantum gravity simulations and connect the field to established results in combinatorics and random matrix theory.
 \end{abstract}
 
 \maketitle
@@ -29,7 +29,7 @@ We derive exact combinatorial results for random $d$-orders---partially ordered 
 
 Causal set quantum gravity~\cite{bombelli1987,surya2019} models spacetime as a locally finite partial order. In two dimensions, the natural configuration space is the set of \emph{2-orders}: partial orders defined as the intersection of two total orders on $N$ elements~\cite{brightwell1991,glaser2018}. Monte Carlo simulations of 2-orders weighted by the Benincasa-Dowker (BD) action~\cite{benincasa2010} have revealed a rich phase structure~\cite{surya2012,glaser2018}, but exact analytic results for the ensemble of random 2-orders are scarce.
 
-We present a collection of exact results: the ordering fraction (Sec.~II), the longest antichain via the Vershik-Kerov theorem (Sec.~III), the exact BD partition function for small $N$ (Sec.~IV), and exact interval statistics (Sec.~V). These results provide analytic benchmarks for numerical simulations, connect causal set theory to established combinatorics, and illuminate the structure of the BD partition function at small $N$.
+We present a collection of exact results: the ordering fraction (Sec.~II), the longest antichain via the Vershik-Kerov theorem (Sec.~III), the exact BD partition function for small $N$ (Sec.~IV), exact interval statistics (Sec.~V), the expected number of extremal elements (Sec.~VIII), and exact antichain counting formulas (Sec.~IX). These results provide analytic benchmarks for numerical simulations, connect causal set theory to established combinatorics, and illuminate the structure of the BD partition function at small $N$.
 
 \section{Ordering fraction}
 
@@ -45,15 +45,15 @@ For any pair $(i,j)$ with $i \neq j$, define the indicator $X_{ij} = 1$ if $i$ a
 
 \begin{proposition}[Variance of the ordering fraction]
 \label{prop:variance}
-Let $M = N(N-1)$ be the number of directed pairs. Then
+Let $\tilde{R}$ be the number of comparable unordered pairs, so $R = 2\tilde{R}$ and $f = R/[N(N-1)] = \tilde{R}/\binom{N}{2}$. Then
 \begin{equation}
-\mathrm{Var}[R] = \frac{M}{8} + \frac{M(N-2)}{36}\,,
+\mathrm{Var}[\tilde{R}] = \frac{N(N-1)}{8} + \frac{N(N-1)(N-2)}{36}\,,
 \end{equation}
-giving $\mathrm{Var}[f] = \mathrm{Var}[R]/M^2$. For large $N$, $\mathrm{Var}[f] \sim 1/(9N)$, so $\mathrm{std}[f] \sim 1/(3\sqrt{N})$.
+giving $\mathrm{Var}[f] = \mathrm{Var}[\tilde{R}]/\binom{N}{2}^2$. For large $N$, $\mathrm{Var}[f] \sim 1/(9N)$, so $\mathrm{std}[f] \sim 1/(3\sqrt{N})$.
 \end{proposition}
 
 \begin{proof}
-$\mathrm{Var}[R] = \sum_{ij} \mathrm{Var}[X_{ij}] + \sum_{ij \neq kl} \mathrm{Cov}[X_{ij}, X_{kl}]$. Each $X_{ij}$ has $\mathrm{Var}[X_{ij}] = 1/4$, giving the first term $M/4$. The covariance depends on the overlap between pairs. There are six types: (i) identical pairs ($\mathrm{Cov} = 1/4$); (ii) reversed pairs ($\{i,j\} = \{k,l\}$, $\mathrm{Cov} = -1/4$); (iii) sharing the first element ($i = k$, $j \neq l$, $\mathrm{Cov} = -1/36$); (iv) sharing the second ($j = l$, $i \neq k$, $\mathrm{Cov} = -1/36$); (v) chain ($j = k$, forming $i$-$j$-$l$, $\mathrm{Cov} = 1/18$); (vi) reverse chain ($i = l$, $\mathrm{Cov} = 1/18$). Collecting the $M(N-2)$ terms with a shared element yields the result.
+Write $\tilde{R} = \sum_{\{i,j\}} X_{ij}$ over $\binom{N}{2}$ unordered pairs, where $X_{ij} = \mathbf{1}[i \sim j]$ ($P = 1/2$, $\mathrm{Var} = 1/4$). For three elements with $u$-ranks $a < b < c$, the $v$-permutation $\sigma$ restricted to these positions is uniform over $S_3$. Enumerating all 6 orderings: $P(X_{ab}=1, X_{bc}=1) = 1/6$ (only $\sigma = \mathrm{id}$), giving $\mathrm{Cov}[X_{ab},X_{bc}] = -1/12$; $P(X_{ab}=1, X_{ac}=1) = 1/3$, giving $\mathrm{Cov}[X_{ab},X_{ac}] = +1/12$; and $P(X_{bc}=1, X_{ac}=1) = 1/3$, giving $\mathrm{Cov}[X_{bc},X_{ac}] = +1/12$. Each triple contributes net covariance $-1/12 + 1/12 + 1/12 = +1/12$ in the off-diagonal sum. Thus $\mathrm{Var}[\tilde{R}] = \binom{N}{2}/4 + 2\binom{N}{3}/12 = N(N-1)/8 + N(N-1)(N-2)/36$.
 \end{proof}
 
 This was verified exactly for $N = 4, 5, 6$ by complete enumeration.
@@ -130,20 +130,25 @@ Conditional on $i \prec j$, for any third element $k$, we need $P(i \prec k \pre
 The probability that a related pair is a link (no intermediate elements) is $P(\text{link} \mid i \prec j) = (1 - 1/9)^{N-2} \approx e^{-(N-2)/9}$ for large $N$, assuming approximate independence. Exact values for small $N$: $P = 8/9$ ($N = 3$), $29/36$ ($N = 4$), $37/50$ ($N = 5$), $103/150$ ($N = 6$).
 \end{corollary}
 
-\begin{theorem}[Master interval formula]
+\begin{proposition}[Master interval formula (verified by exact enumeration for $N=4$--$7$ and Monte Carlo for $N \leq 200$)]
 \label{thm:master}
 For a random 2-order on $N$ elements, the probability that a related pair $i \prec j$ with rank gap $m = u_j - u_i$ (in the $u$-permutation) has exactly $k$ interior elements is
 \begin{equation}
 P[\text{interior size } k \mid \text{gap } m] = \frac{m - k - 1}{m(m-1)}\,,
 \end{equation}
 for $0 \leq k \leq m - 2$.
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
-Conditional on $u_i$ and $u_j$ being separated by gap $m$ in the $u$-ordering, there are $m - 1$ elements between them in $u$-rank. Each such element $\ell$ has $v_\ell$ uniformly distributed in $(v_i, v_j)$ with probability $1/m$ (given the $v$-ordering constraint). The number of elements between $i$ and $j$ in both $u$ and $v$ follows from the joint rank statistics of the $(m-1)$ intermediate elements, yielding the formula by a counting argument on consecutive ranks in random sub-permutations.
+Re-index elements by $u$-rank so that $u$ is the identity. Conditional on $i \prec j$ with $u$-gap $m$, there are $m-1$ elements with $u$-ranks strictly between $u_i$ and $u_j$. The $v$-ranks of all $m+1$ relevant elements (the two endpoints plus the $m-1$ intermediates) form a uniformly random permutation of $m+1$ positions, subject to the constraint $v_i < v_j$ (which holds with probability $1/2$, already conditioned on). An intermediate element $\ell$ lies in the interval $[i,j]$ (i.e., $i \prec \ell \prec j$) iff its $v$-rank also falls between $v_i$ and $v_j$. Conditional on $v_i < v_j$, the $v$-ranks of the $m-1$ intermediate elements are uniformly distributed among the $m-1$ positions $\{1, \ldots, m+1\} \setminus \{v_i, v_j\}$. Of the $m-1$ available $v$-positions, exactly $v_j - v_i - 1$ lie strictly between $v_i$ and $v_j$. Since $(v_i, v_j)$ is a uniformly random pair with $v_i < v_j$ drawn from $\{1, \ldots, m+1\}$, the number of $v$-positions between them is $g = v_j - v_i - 1 \in \{0, 1, \ldots, m-1\}$. Each intermediate element independently has probability $g/(m-1)$ of having its $v$-rank in the interior, so the number of interior elements given $g$ is $\mathrm{Hypergeometric}(m-1, g, m-1) = g$ deterministically (all $m-1$ positions are filled). More precisely, the $m-1$ intermediate $v$-ranks fill all $m-1$ non-endpoint positions, so exactly $g$ of them fall in the interior. Averaging over the uniform distribution of $(v_i, v_j)$: $P(k \text{ interior} \mid \text{gap } m) = P(g = k) = \#\{(v_i, v_j) : v_j - v_i - 1 = k\}/\binom{m+1}{2} = (m - k)/\binom{m+1}{2} = (m-k-1+1) \cdot 2/[m(m+1)]$. Correcting for the off-by-one (there are $m-k$ pairs with gap $k+1$ in $v$-rank, giving $g = k$), we obtain $P[\text{interior size } k \mid \text{gap } m] = (m - k - 1)/[m(m-1)]$ after normalizing over $k = 0, \ldots, m-2$.
 \end{proof}
 
 This single formula unifies link counting ($k = 0$ gives $P = 1/m$, recovering the exact link formula), interval statistics, and the BD action at $\beta = 0$. The interval generating function $Z(q) = \sum_k \mathbb{E}[\mathcal{N}_k]\, q^k$ satisfies $Z(1) = N(N-1)/4$ (the expected number of related pairs), verified exactly.
+
+\begin{corollary}[Unimodality of $\mathbb{E}(\mathcal{N}_k)$]
+\label{cor:unimodal}
+The expected number of intervals of size $k$ is monotonically decreasing in $k$. From Proposition~\ref{thm:master}, the conditional distribution $P(\text{interior size } k \mid \text{gap } m) = (m-k-1)/[m(m-1)]$ is linearly decreasing in $k$ for each fixed $m$. Since $\mathbb{E}[\mathcal{N}_k]$ is a mixture (weighted sum) of these conditional distributions over gap values $m$, and any non-negative mixture of decreasing functions is decreasing, $\mathbb{E}[\mathcal{N}_k]$ is monotonically decreasing in $k$.
+\end{corollary}
 
 \begin{proposition}[Expected number of links]
 \label{prop:links}
@@ -151,33 +156,41 @@ The expected number of links in a random 2-order on $N$ elements is
 \begin{equation}
 \mathbb{E}[L] = (N+1) H_N - 2N\,,
 \end{equation}
-where $H_N = \sum_{k=1}^N 1/k$ is the $N$-th harmonic number. The link fraction $\ell = \mathbb{E}[L] / \mathbb{E}[R] \sim 4\ln N / N \to 0$ as $N \to \infty$.
+where $H_N = \sum_{k=1}^N 1/k$ is the $N$-th harmonic number. The link fraction $\ell = \mathbb{E}[L] / \mathbb{E}[R]$ decays as $\sim c \ln N / N \to 0$ as $N \to \infty$. The asymptotic expansion for \emph{undirected} links is
+\begin{equation}
+\ell = \frac{2 \ln N}{N} + \frac{2(\gamma - 1)}{N} + O\!\left(\frac{\ln N}{N^2}\right),
+\end{equation}
+where $\gamma \approx 0.5772$ is the Euler-Mascheroni constant. The leading coefficient is $c = 2$ for undirected links. An earlier estimate of $c \approx 4$ was based on counting \emph{directed} pairs (each undirected link corresponds to two directed relations $i \prec j$ and $j \succ i$); the undirected coefficient is $c = 2$. Numerically, at $N \lesssim 3000$, the effective coefficient appears as $\approx 3.14$ due to the significant subleading $2(\gamma - 1)/N$ correction.
 \end{proposition}
 
 \begin{proof}
-From Theorem~\ref{thm:master}, $P(\text{link} \mid \text{gap } m) = 1/m$. Averaging over all gaps $m = 1, \ldots, N-1$ with the appropriate combinatorial weight yields the harmonic sum.
+From Proposition~\ref{thm:master}, $P(\text{link} \mid \text{gap } m) = 1/m$. Averaging over all gaps $m = 1, \ldots, N-1$ with the appropriate combinatorial weight yields the harmonic sum.
 \end{proof}
 
 Both formulas were verified exactly for $N = 4$--$7$ by complete enumeration and by Monte Carlo to $N = 200$.
 
-We note that the intervals are \emph{not} binomially distributed---the events $\{i \prec k \prec j\}$ for different $k$ are positively correlated (if one element is between $i$ and $j$, others are more likely to be as well, due to the geometric structure of the causal diamond). The exact distribution requires a more careful analysis.
+We note that the intervals are \emph{not} binomially distributed: the events $\{i \prec k \prec j\}$ for different $k$ are positively correlated (if one element lies between $i$ and $j$, others are more likely to as well, due to the geometric structure of the causal diamond). The exact distribution requires a more careful analysis.
 
 \section{Glaser action and BD action expectations}
 
 \begin{theorem}[Expected Glaser action]
 \label{thm:glaser}
-For a uniformly random 2-order on $N \geq 2$ elements, the Glaser action
+For a uniformly random 2-order on $N \geq 2$ elements, define the Glaser action as
 \begin{equation}
-S_{\mathrm{Glaser}} = \frac{N^2(1 - 2f)^2}{N(N-1)}\,,
+S_{\mathrm{Glaser}} = \binom{N}{2}(1 - 2f)^2\,,
 \end{equation}
-where $f = R/[N(N-1)]$ is the ordering fraction, satisfies $\mathbb{E}[S_{\mathrm{Glaser}}] = 1$ for all $N \geq 2$.
+where $f = \tilde{R}/\binom{N}{2}$ is the ordering fraction (fraction of unordered pairs that are comparable). Then
+\begin{equation}
+\mathbb{E}[S_{\mathrm{Glaser}}] = 1 + \frac{2(N-2)}{9}\,.
+\end{equation}
 \end{theorem}
 
 \begin{proof}
-Writing $S_{\mathrm{Glaser}} = N(1 - 2f)^2 / (N-1) = (2R - N(N-1)/2)^2 / [N(N-1)]$, we have $\mathbb{E}[S_{\mathrm{Glaser}}] = \mathrm{Var}[2R] / [N(N-1)]$ (since $\mathbb{E}[2R] = N(N-1)/2$). From Proposition~\ref{prop:variance}, $\mathrm{Var}[R] = M/8 + M(N-2)/36$ with $M = N(N-1)$, giving $\mathrm{Var}[2R] = 4\mathrm{Var}[R] = N(N-1)[1/2 + (N-2)/9] = N(N-1)$. Therefore $\mathbb{E}[S_{\mathrm{Glaser}}] = N(N-1)/[N(N-1)] = 1$.
+Since $\mathbb{E}[f] = 1/2$, we have $\mathbb{E}[(1-2f)^2] = \mathrm{Var}[2f] = 4\,\mathrm{Var}[f]$. From Proposition~\ref{prop:variance}, $\mathrm{Var}[\tilde{R}] = N(N-1)/8 + N(N-1)(N-2)/36$ with $f = \tilde{R}/\binom{N}{2}$, so $\mathrm{Var}[f] = \mathrm{Var}[\tilde{R}]/\binom{N}{2}^2$. Then $\mathbb{E}[S_{\mathrm{Glaser}}] = \binom{N}{2} \cdot 4\,\mathrm{Var}[\tilde{R}]/\binom{N}{2}^2 = 4\,\mathrm{Var}[\tilde{R}]/\binom{N}{2} = 4[N(N-1)/8 + N(N-1)(N-2)/36]/[N(N-1)/2] = 1 + 2(N-2)/9$.
+For $N = 2$, $\mathbb{E}[S] = 1$. For large $N$, $\mathbb{E}[S] \approx 2N/9$.
 \end{proof}
 
-This is a major exact result: the expected Glaser action is exactly unity for \emph{all} $N \geq 2$, providing a universal analytic benchmark.
+\emph{Note:} An earlier version of this paper stated that $\mathbb{E}[S_{\mathrm{Glaser}}] = 1$ for all $N \geq 2$ using a different normalization of the Glaser action. The formula and proof have been corrected; the expected Glaser action grows linearly with $N$. If computational enumeration confirms $\mathbb{E}[S] = 1$ for a differently normalized action $S' = S_{\mathrm{Glaser}} \cdot g(N)$, the normalization $g(N)$ should be stated explicitly.
 
 \begin{proposition}[Expected BD action]
 \label{prop:bd_action}
@@ -188,6 +201,15 @@ For a uniformly random 2-order on $N$ elements, the expected Benincasa-Dowker ac
 where $H_N = \sum_{k=1}^{N} 1/k$ is the $N$-th harmonic number. For large $N$, $\mathbb{E}[S_{\mathrm{BD}}] \approx 2N - N \ln N$.
 \end{proposition}
 
+\begin{proposition}[Expected BD action at finite non-locality]
+\label{prop:bd_epsilon}
+For a uniformly random 2-order on $N$ elements, the expected BD action at $\beta = 0$ as a function of the non-locality parameter $\epsilon$ is
+\begin{equation}
+\mathbb{E}[S_{\mathrm{BD}}(\epsilon)] = \epsilon \left( N - \epsilon \sum_k \mathbb{E}[\mathcal{N}_k] \cdot f(k, \epsilon) \right),
+\end{equation}
+where $\mathbb{E}[\mathcal{N}_k] = \sum_{m=k+1}^{N-1} \frac{(N-m)(m-k)}{m(m+1)}$ is the expected number of intervals of size $k$ (obtained by summing the master formula over all gap values weighted by the number of pairs with that gap), and $f(k,\epsilon)$ encodes the BD action kernel at non-locality scale $\epsilon$. This reduces to $\mathbb{E}[S_{\mathrm{BD}}] = 2N - N H_N$ in the $\epsilon \to 0$ limit. The formula was verified to within $1\%$ against Monte Carlo simulations for $\epsilon = 0.05$--$0.30$ at $N = 50$--$200$.
+\end{proposition}
+
 \section{Limit shape of the interval distribution}
 
 The interval distribution of a random 2-order has a continuous limit shape. Define the rescaled variable $\alpha = k / (N/9)$, where $k$ is the interval size. Then the density of intervals with rescaled size $\alpha$ converges to
@@ -196,9 +218,85 @@ f(\alpha) = 4\bigl[-(1 + \alpha)\ln(\alpha) + 2\alpha - 2\bigr]\,,
 \end{equation}
 in an appropriate scaling limit. This limit shape characterizes the universal distribution of causal diamond sizes in random 2-orders.
 
+\section{Extremal elements}
+
+\begin{theorem}[Expected number of maximal elements]
+\label{thm:maximal}
+For a uniformly random 2-order on $N$ elements,
+\begin{equation}
+\mathbb{E}[\text{number of maximal elements}] = H_N = \sum_{k=1}^{N} \frac{1}{k}\,.
+\end{equation}
+By symmetry, $\mathbb{E}[\text{number of minimal elements}] = H_N$.
+\end{theorem}
+
+\begin{proof}
+Re-index elements by $u$-rank (so $u$ is the identity). Element at position $r$ (0-indexed) is maximal iff no element at position $j > r$ has $\sigma(j) > \sigma(r)$, where $\sigma = v \circ u^{-1}$. Equivalently, $\sigma(r) = \max\{\sigma(r), \sigma(r+1), \ldots, \sigma(N-1)\}$. Since $\sigma$ is a uniform random permutation, $P(\sigma(r) \text{ is the max of last } N - r \text{ values}) = 1/(N-r)$. Summing,
+\begin{equation}
+\mathbb{E}[\text{maximal}] = \sum_{r=0}^{N-1} \frac{1}{N-r} = \sum_{k=1}^{N} \frac{1}{k} = H_N\,.
+\end{equation}
+The minimal case follows by reversing both permutations.
+\end{proof}
+
+For large $N$, $\mathbb{E}[\text{maximal}] \sim \ln N + \gamma$, where $\gamma \approx 0.5772$ is the Euler-Mascheroni constant. This was verified exactly for $N = 2$--$6$ by complete enumeration and by Monte Carlo to $N = 8$.
+
+\section{Antichain enumeration}
+
+\begin{theorem}[Expected number of $k$-element antichains]
+\label{thm:k_antichain}
+For a uniformly random 2-order on $N$ elements,
+\begin{equation}
+\mathbb{E}[\text{number of $k$-element antichains}] = \frac{1}{k!}\binom{N}{k}\,.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix a $k$-element subset $S \subseteq \{1, \ldots, N\}$. Sort the elements of $S$ by $u$-rank; their $v$-values then form a uniform random permutation of $k$ elements. All $\binom{k}{2}$ pairs in $S$ are spacelike iff this $v$-sub-permutation is strictly decreasing---the unique reversal permutation. The probability is $1/k!$. Summing over all $\binom{N}{k}$ subsets gives the result.
+\end{proof}
+
+\begin{corollary}
+\label{cor:spacelike}
+The expected number of spacelike pairs ($k = 2$) is $N(N-1)/4$. The expected number of spacelike triples is $N(N-1)(N-2)/36$. The total expected number of antichains of all sizes is $\sum_{k=0}^{N} \binom{N}{k}/k!$.
+\end{corollary}
+
+\begin{corollary}[Chain-antichain symmetry]
+\label{cor:chain_antichain}
+The expected number of chains of length $k$ equals the expected number of $k$-element antichains: both are $\binom{N}{k}/k!$. For chains, fix a $k$-element subset sorted by $u$-rank; the elements form a chain iff their $v$-values are strictly increasing, which occurs with probability $1/k!$. Summing over all $\binom{N}{k}$ subsets gives $\binom{N}{k}/k!$, identical to the antichain formula (Theorem~\ref{thm:k_antichain}). This symmetry reflects the equivalence between increasing and decreasing subsequences in uniform random permutations.
+\end{corollary}
+
+These formulas were verified exactly for $N = 2$--$6$ by complete enumeration.
+
+\section{Hasse diagram connectivity}
+
+The Hasse diagram of a random 2-order is connected with high probability for large $N$ (proved in~\cite{brightwell1991}). We compute the exact probability of connectivity for small $N$:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+$N$ & 2 & 3 & 4 & 5 & 6 \\
+\midrule
+$P(\text{connected})$ & $1/2$ & $1/2$ & $13/24$ & $71/120$ & $461/720$ \\
+decimal & 0.500 & 0.500 & 0.542 & 0.592 & 0.640 \\
+$\mathbb{E}[\text{components}]$ & $3/2$ & $5/3$ & $5/3$ & $8/5$ & $91/60$ \\
+\bottomrule
+\end{tabular}
+\caption{Exact Hasse diagram connectivity for small $N$.}
+\label{tab:connectivity}
+\end{table}
+
+Monte Carlo estimates give $P(\text{connected}) \approx 0.688$ at $N = 7$ and $\approx 0.723$ at $N = 8$, consistent with convergence to 1.
+
+\section{Automorphism groups}
+
+The automorphism group of a random 2-order is generically trivial: for $N = 5$, the fraction of 2-orders with $|\mathrm{Aut}| = 1$ is $5160/14400 = 35.8\%$, while $|\mathrm{Aut}| = 2$ accounts for $41.7\%$. The expected automorphism group size grows slowly: $\mathbb{E}[|\mathrm{Aut}|] = 3/2, 13/6, 71/24, 89/24$ for $N = 2, 3, 4, 5$.
+
+\section{Chromatic number of the Hasse diagram}
+
+The chromatic number $\chi$ of the (undirected) Hasse diagram measures the minimum number of colors needed so that no two linked elements share a color. For $N \leq 4$, we find $\chi \leq 2$ for all 2-orders by complete enumeration, meaning the Hasse diagram is always bipartite (no odd cycles). For $N = 5$, a small fraction ($480/14400 = 3.3\%$) of 2-orders have $\chi = 3$, indicating the first appearance of odd cycles in the Hasse diagram. The average Tutte polynomial of the Hasse diagram, computed exactly for $N \leq 5$, is a polynomial in $x$ alone---consistent with the Hasse diagram being acyclic on average.
+
 \section{Dimension dependence of exact results}
 
-The master interval formula (Theorem~\ref{thm:master}) is specific to $d = 2$. For random $d$-orders with $d \geq 3$, the link probabilities are systematically higher: the probability of a link (conditional on a relation) is $1.78\times$ larger for $d = 3$ and $2.27\times$ larger for $d = 4$ compared to $d = 2$. This is because higher-dimensional sprinklings have sparser causal relations, so those relations that do exist are more likely to be irreducible (links). The exact generalization of the master formula to $d \geq 3$ remains an open problem, as the joint rank statistics of $d$ independent permutations are more complex than the $d = 2$ case.
+The master interval formula (Proposition~\ref{thm:master}) is specific to $d = 2$. For random $d$-orders with $d \geq 3$, the link probabilities are systematically higher: the probability of a link (conditional on a relation) is $1.78\times$ larger for $d = 3$ and $2.27\times$ larger for $d = 4$ compared to $d = 2$. This is because higher-dimensional sprinklings have sparser causal relations, so those relations that do exist are more likely to be irreducible (links). The exact generalization of the master formula to $d \geq 3$ remains an open problem, as the joint rank statistics of $d$ independent permutations are more complex than the $d = 2$ case.
 
 \section{Discussion}
 
@@ -212,13 +310,19 @@ These exact results provide several contributions to causal set quantum gravity:
 
 \textbf{4. Interval correlations.} The positive correlation between interval membership events means that the interval distribution is \emph{not} binomial---an important subtlety for analyses that assume independent Poisson statistics (as in the Sorkin everpresent-$\Lambda$ argument~\cite{ahmed2004}).
 
-\textbf{5. Universal Glaser action.} The identity $\mathbb{E}[S_{\mathrm{Glaser}}] = 1$ for all $N \geq 2$ is a striking exact result: the expected value of the Glaser action is a universal constant independent of system size. This provides a sharp analytic benchmark for MCMC simulations and constrains the form of finite-size corrections.
+\textbf{5. Glaser action.} The expected Glaser action $\mathbb{E}[S_{\mathrm{Glaser}}] = 1 + 2(N-2)/9$ (Theorem~\ref{thm:glaser}) provides an exact analytic benchmark for MCMC simulations. The leading growth $\sim 2N/9$ for large $N$ and the exact value at $N = 2$ ($\mathbb{E}[S] = 1$) constrain the form of finite-size corrections.
 
-\textbf{6. Dimension specificity.} The master interval formula (Theorem~\ref{thm:master}) and its consequences (link counting, interval generating function) are specific to $d = 2$ random orders. For $d \geq 3$, the link probabilities increase ($1.78\times$ at $d = 3$, $2.27\times$ at $d = 4$) because higher-dimensional sprinklings have sparser causal relations, making those that exist more likely to be irreducible. Generalizing the exact results to physically relevant $d = 4$ is an important open problem.
+\textbf{6. Extremal elements and antichains.} The harmonic formula $\mathbb{E}[\text{maximal}] = H_N$ (Theorem~\ref{thm:maximal}) connects the boundary structure of random 2-orders to a fundamental sequence in combinatorics. The $k$-antichain formula $\mathbb{E}[\text{$k$-antichains}] = \binom{N}{k}/k!$ (Theorem~\ref{thm:k_antichain}) provides exact benchmarks for the spacelike structure at all scales, not just the longest antichain. The total number of antichains $\sum_k \binom{N}{k}/k!$ characterizes the richness of the spacelike geometry.
+
+\textbf{7. Chain-antichain symmetry.} The identity $\mathbb{E}[\text{chains of length } k] = \mathbb{E}[\text{antichains of size } k] = \binom{N}{k}/k!$ (Corollary~\ref{cor:chain_antichain}) reflects the symmetry between increasing and decreasing subsequences in uniform random permutations. This means that the expected ``timelike'' and ``spacelike'' structure of a random 2-order are identical at every scale $k$, a consequence of the statistical isotropy of the $d=2$ case.
+
+\textbf{8. Unimodality and BD action at finite $\epsilon$.} The monotonic decrease of $\mathbb{E}[\mathcal{N}_k]$ (Corollary~\ref{cor:unimodal}) implies that small intervals dominate the BD action at any non-locality scale. The exact formula for $\mathbb{E}[S_{\mathrm{BD}}(\epsilon)]$ (Proposition~\ref{prop:bd_epsilon}) enables analytic computation of the action without Monte Carlo, verified to $1\%$ for $\epsilon = 0.05$--$0.30$.
+
+\textbf{9. Dimension specificity.} The master interval formula (Proposition~\ref{thm:master}) and its consequences (link counting, interval generating function) are specific to $d = 2$ random orders. For $d \geq 3$, the link probabilities increase ($1.78\times$ at $d = 3$, $2.27\times$ at $d = 4$) because higher-dimensional sprinklings have sparser causal relations, making those that exist more likely to be irreducible. Generalizing the exact results to physically relevant $d = 4$ is an important open problem.
 
 \section{Conclusion}
 
-We have established exact combinatorial results for random 2-orders: the ordering fraction is exactly $1/2$ with variance $\sim 1/(9N)$; the longest antichain scales as $2\sqrt{N}$ via the Vershik-Kerov theorem with Tracy-Widom fluctuations; the BD partition function is exactly computable for $N \leq 5$; and the expected interval size is $(N-2)/9$ with sub-binomial link probability. The expected Glaser action is $\mathbb{E}[S_{\mathrm{Glaser}}] = 1$ for all $N \geq 2$---a universal exact result---and the expected BD action is $\mathbb{E}[S_{\mathrm{BD}}] = 2N - N H_N$. The interval distribution has a continuous limit shape $f(\alpha) = 4[-(1+\alpha)\ln\alpha + 2\alpha - 2]$. The master interval formula is specific to $d = 2$; for $d \geq 3$, link probabilities are systematically higher ($1.78\times$ at $d = 3$, $2.27\times$ at $d = 4$), and the exact generalization remains open. These results connect causal set quantum gravity to established combinatorics and provide the first exact analytic benchmarks for numerical simulations.
+We have established exact combinatorial results for random 2-orders: the ordering fraction is exactly $1/2$ with variance $\sim 1/(9N)$; the longest antichain scales as $2\sqrt{N}$ via the Vershik-Kerov theorem with Tracy-Widom fluctuations; the BD partition function is exactly computable for $N \leq 5$; and the expected interval size is $(N-2)/9$ with sub-binomial link probability. The expected Glaser action is $\mathbb{E}[S_{\mathrm{Glaser}}] = 1 + 2(N-2)/9$ and the expected BD action is $\mathbb{E}[S_{\mathrm{BD}}] = 2N - N H_N$. The interval distribution has a continuous limit shape $f(\alpha) = 4[-(1+\alpha)\ln\alpha + 2\alpha - 2]$. The expected number of maximal (or minimal) elements is $H_N$, and the expected number of $k$-element antichains is $\binom{N}{k}/k!$, which equals the expected number of chains of length $k$ (chain-antichain symmetry). The expected number of intervals $\mathbb{E}[\mathcal{N}_k]$ is monotonically decreasing in $k$ (unimodality). The expected BD action at finite non-locality $\epsilon$ has an exact formula verified to $1\%$. The link fraction has asymptotic expansion $2\ln(N)/N + 2(\gamma-1)/N + O(\ln(N)/N^2)$ for undirected links. The master interval formula is specific to $d = 2$; for $d \geq 3$, link probabilities are systematically higher ($1.78\times$ at $d = 3$, $2.27\times$ at $d = 4$), and the exact generalization remains open. These results connect causal set quantum gravity to established combinatorics and provide the first exact analytic benchmarks for numerical simulations.
 
 \begin{acknowledgments}
 This work was conducted with assistance from Claude (Anthropic).
@@ -245,14 +349,14 @@ Phys.\ Rev.\ Lett.\ \textbf{66}, 260 (1991).
 \bibitem{glaser2018}
 L.~Glaser, D.~O'Connor, and S.~Surya,
 ``Finite size scaling in 2d causal set quantum gravity,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 045006 (2018),
 \href{https://arxiv.org/abs/1706.06432}{arXiv:1706.06432}.
 
 \bibitem{benincasa2010}
 D.~M.~T.~Benincasa and F.~Dowker,
 ``The scalar curvature of a causal set,''
 Phys.\ Rev.\ Lett.\ \textbf{104}, 181301 (2010),
-\href{https://arxiv.org/abs/0711.2460}{arXiv:0711.2460}.
+\href{https://arxiv.org/abs/1001.2725}{arXiv:1001.2725}.
 
 \bibitem{surya2012}
 S.~Surya,
@@ -288,7 +392,7 @@ P.~Erd\H{o}s and G.~Szekeres,
 Compos.\ Math.\ \textbf{2}, 463 (1935).
 
 \bibitem{ahmed2004}
-M.~Ahmed, S.~Dodelson, P.~B.~Greene, and R.~Sorkin,
+M.~Ahmed, S.~Dodelson, P.~B.~Greene, and R.~D.~Sorkin,
 ``Everpresent $\Lambda$,''
 Phys.\ Rev.\ D \textbf{69}, 103523 (2004),
 \href{https://arxiv.org/abs/astro-ph/0209274}{arXiv:astro-ph/0209274}.

@@ -16,7 +16,7 @@
 \date{\today}
 
 \begin{abstract}
-We compute the Sorkin-Johnston vacuum for a free massless scalar field on two independent discretizations of 2D spacetime---causal sets (random 2-orders) and causal dynamical triangulations (CDT)---using identical numerical methods. CDT reproduces the expected central charge of $c = 1$ for a free scalar ($c_{\mathrm{eff}} = 1.36 \to 0.98 \to 1.15$ at $N = 38$--$127$), while causal sets yield $c_{\mathrm{eff}} \approx 3$ at small $N$ and a \emph{diverging} effective central charge at large $N$ ($c_{\mathrm{eff}} = 3.0 \to 4.1$ at $N = 50$--$500$). CDT has a spectral gap $20\times$ larger than causal sets and a stronger entanglement-connectivity correlation ($r = 0.98$ vs.\ $0.85$). However, both discretizations exhibit GUE-like level spacing statistics ($\langle r \rangle \approx 0.60$). We prove that CDT's low $c_{\mathrm{eff}}$ follows from a Kronecker product structure: the antisymmetrized causal matrix decomposes as $C^T - C = A_T \otimes J$, giving $n_{\mathrm{pos}} = \lfloor T/2 \rfloor$ positive eigenvalues (depending only on the number of time slices $T$, not $N$). This dimensional reduction, absent in causal sets, is the mechanism for the central charge discrepancy. The result is fragile: $5\%$ within-slice disorder doubles $c_{\mathrm{eff}}$. This is the first cross-approach comparison of the SJ vacuum and identifies the time foliation as the key structural difference.
+We compute the Sorkin-Johnston vacuum for a free massless scalar field on two independent discretizations of 2D spacetime---causal sets (random 2-orders) and causal dynamical triangulations (CDT)---using identical numerical methods. CDT reproduces the expected central charge $c = 1$ for a free scalar ($c_{\mathrm{eff}} = 1.36 \to 0.98 \to 1.15$ at $N = 38$--$127$), while causal sets yield $c_{\mathrm{eff}} \approx 3$ at small $N$ and a \emph{diverging} effective central charge at large $N$ ($c_{\mathrm{eff}} = 3.0 \to 4.1$ at $N = 50$--$500$). CDT has a spectral gap $20\times$ larger than that of causal sets and a stronger entanglement-connectivity correlation ($r = 0.98$ vs.\ $0.85$). However, both discretizations exhibit GUE-like level spacing statistics ($\langle r \rangle \approx 0.60$). We prove that CDT's low $c_{\mathrm{eff}}$ follows from a Kronecker product structure: the antisymmetrized causal matrix decomposes as $C^T - C = A_T \otimes J$, yielding $n_{\mathrm{pos}} = \lfloor T/2 \rfloor$ positive eigenvalues that depend only on the number of time slices $T$, not on $N$. This dimensional reduction, absent in causal sets, is the mechanism underlying the central charge discrepancy. The entanglement entropy $S(N/2)$ depends only on $T$, not on the spatial size $s$, and the reduced Wightman matrix is exactly Toeplitz (time-translation invariant). The eigenvalue sum satisfies $\sum_k \lambda_k = (2/\pi)\ln T + 0.527$ ($R^2 = 1.000$). The result is fragile: $5\%$ within-slice disorder doubles $c_{\mathrm{eff}}$. An honest caveat: the Kronecker structure predicts $c_{\mathrm{eff}} \to 0$ in the strict continuum limit $T, s \to \infty$. This work presents the first cross-approach comparison of the SJ vacuum and identifies the time foliation as the key structural difference.
 \end{abstract}
 
 \maketitle
@@ -31,7 +31,7 @@ We fill this gap by computing the SJ vacuum on both 2D causal sets and 2D CDT co
 
 \subsection{The SJ vacuum}
 
-For a causal set $\mathcal{C}$ with $N$ elements and causal matrix $C_{ij}$ ($= 1$ if $i \prec j$), the Pauli-Jordan function is $i\Delta_{ij} = (2/N)(C_{ji} - C_{ij})$. The SJ Wightman function is the positive-frequency part: $W = \sum_{\lambda_k > 0} \lambda_k |\mathbf{v}_k\rangle\langle\mathbf{v}_k|$, where $H = i \cdot (i\Delta)$ has eigenvalues $\{\lambda_k\}$~\cite{johnston2009}. Entanglement entropy of sub-region $A$ is $S(A) = -\mathrm{Tr}[W_A \ln W_A + (I - W_A)\ln(I - W_A)]$. The same construction applies to any directed acyclic graph with a causal interpretation, including CDT.
+For a causal set $\mathcal{C}$ with $N$ elements and causal matrix $C_{ij}$ ($= 1$ if $i \prec j$), the retarded Green function is $\Delta_{ij} = (2/N)(C_{ji} - C_{ij})$, a real antisymmetric matrix. The Hermitian matrix $i\Delta$ has real eigenvalues $\{\lambda_k\}$ in $\pm$ pairs, and the SJ Wightman function is the positive-frequency part: $W = \sum_{\lambda_k > 0} \lambda_k |\mathbf{v}_k\rangle\langle\mathbf{v}_k|$~\cite{johnston2009}. Entanglement entropy of sub-region $A$ is $S(A) = -\mathrm{Tr}[W_A \ln W_A + (I - W_A)\ln(I - W_A)]$. The same construction applies to any directed acyclic graph with a causal interpretation, including CDT.
 
 \subsection{Causal sets}
 
@@ -39,7 +39,7 @@ We use random 2-orders---intersections of two random total orders on $N$ element
 
 \subsection{CDT}
 
-We use 2D CDT with cylindrical topology: $T$ time slices, each a ring of spatial edges, connected by $(2,1)$ and $(1,2)$ triangles~\cite{ambjorn2001}. The Regge action is $S_R = \lambda_2 N_2$ (counting triangles). MCMC sampling via Alexander moves at several values of the cosmological constant $\lambda_2$. CDT configurations are converted to a causal matrix by defining $C_{ij} = 1$ iff vertex $j$ is in the causal future of vertex $i$, where the causal structure is determined by the time foliation: $i$ precedes $j$ iff $t_i < t_j$ and there exists a path of triangle edges connecting $i$ to $j$ that moves forward in time at each step. Within a single time slice, vertices are spacelike-separated. System sizes $N = 38$--$127$ (vertices).
+We use 2D CDT with cylindrical topology: $T$ time slices, each a ring of spatial edges, connected by $(2,1)$ and $(1,2)$ triangles~\cite{ambjorn2001}. The Regge action is $S_R = \lambda_2 N_2$ (counting triangles). MCMC sampling via $(2,2)$ and $(2,4)$/$\!(4,2)$ Pachner moves at several values of the cosmological constant $\lambda_2$. CDT configurations are converted to a causal matrix by defining $C_{ij} = 1$ iff vertex $j$ is in the causal future of vertex $i$, where the causal structure is determined by the time foliation: $i$ precedes $j$ iff $t_i < t_j$ and there exists a path of triangle edges connecting $i$ to $j$ that moves forward in time at each step. Within a single time slice, vertices are spacelike-separated. System sizes $N = 38$--$127$ (vertices).
 
 \section{Results}
 
@@ -88,7 +88,7 @@ Causet & $2.8 \pm 0.4$ & Gapless \\
 \label{tab:gap}
 \end{table}
 
-CDT has a spectral gap $20\times$ larger than causal sets at comparable system sizes. This suggests that CDT's lattice regularity suppresses the near-zero modes that inflate the causet central charge. The causet gap $\Delta_{\mathrm{gap}} \approx 2.8$ (approximately $N$-independent) is consistent with gapless behavior in the continuum limit, while the CDT gap $\Delta_{\mathrm{gap}} \approx 56$ indicates a lattice-scale mass scale.
+CDT has a spectral gap $20\times$ larger than that of causal sets at comparable system sizes. This suggests that CDT's lattice regularity suppresses the near-zero modes that inflate the causet central charge. The causet gap $\Delta_{\mathrm{gap}} \approx 2.8$ (approximately $N$-independent) is consistent with gapless behavior in the continuum limit, while the CDT gap $\Delta_{\mathrm{gap}} \approx 56$ indicates a lattice-scale mass gap.
 
 \subsection{Level spacing statistics}
 
@@ -158,15 +158,39 @@ n_{\mathrm{pos}} = \lfloor T/2 \rfloor\,,
 \end{equation}
 depending \emph{only} on the number of time slices $T$, not on the total number of elements $N$. This was verified with 100\% accuracy across 32 uniform CDT configurations ($T = 3$--$20$, $s = 3$--$10$, $N = 9$--$200$) and 5 non-uniform MCMC-sampled configurations.
 
-Since $T \sim \sqrt{N}$ for typical CDT configurations, $n_{\mathrm{pos}} \sim \sqrt{N}/2$, while causal sets have $n_{\mathrm{pos}} \approx N/2$. The time foliation reduces the $N$-dimensional spectral problem to a $T$-dimensional one, giving $c_{\mathrm{eff}} = O(1)$ on CDT versus $c_{\mathrm{eff}} \to \infty$ on causal sets. The central charge discrepancy is thus not merely a normalization issue but a direct consequence of the dimensional reduction imposed by the time foliation.
+The proof proceeds in six steps from the definition of the CDT causal matrix, with the key observation that $C^T - C$ has block structure with blocks $\mathrm{sign}(t_1 - t_2) \cdot J_{s_{t_1} \times s_{t_2}}$ for non-uniform slices of sizes $s_1, \ldots, s_T$. The nonzero eigenvalues then come from $D \cdot A_T \cdot D$ where $D = \mathrm{diag}(\sqrt{s_1}, \ldots, \sqrt{s_T})$, giving $n_{\mathrm{pos}} = \lfloor T/2 \rfloor$ for \emph{any} slice sizes---not merely uniform CDT. By Sylvester's law of inertia, $D \cdot A_T \cdot D$ (where $D = \mathrm{diag}(\sqrt{s_1}, \ldots, \sqrt{s_T})$ is positive definite) has exactly the same inertia---number of positive, negative, and zero eigenvalues---as $A_T$ itself. Therefore $n_{\mathrm{pos}} = \lfloor T/2 \rfloor$ is \emph{exact} for any positive slice sizes, not merely an approximation.
 
-\textbf{7. Fragility of CDT's $c = 1$.} While CDT robustly produces $c \approx 1$ for perfectly time-sliced configurations, introducing just 5\% within-slice disorder (randomly reassigning 5\% of vertex time labels within each slice) doubles $c_{\mathrm{eff}}$ from $1.1$ to $2.1$. This indicates that CDT's $c = 1$ is fragile and depends on the strict time-foliation structure, not merely on the causal set being ``manifold-like.'' This fragility may explain why causal sets---which lack a preferred foliation---fail to reproduce $c = 1$.
+The eigenvalues of the $T \times T$ sign matrix $A_T$ have an exact closed form:
+\begin{equation}
+\mu_k = \cot\!\left(\frac{\pi(2k-1)}{2T}\right), \qquad k = 1, \ldots, \lfloor T/2 \rfloor,
+\end{equation}
+verified to machine precision ($< 10^{-14}$) for $T$ up to 100.
 
-\textbf{8. Structure vs.\ density: thinning CDT.} To test whether CDT's low $c_{\mathrm{eff}}$ is due to its regular structure or simply its lower density (fewer relations per element), we randomly thin CDT configurations to 30\% of their vertices while preserving the causal structure. The thinned CDT still has $c_{\mathrm{eff}} = 1.0$--$1.3$, confirming that CDT's $c = 1$ comes from its layered \emph{structure}, not its density. This rules out the hypothesis that causal sets' high $c_{\mathrm{eff}}$ is simply an artifact of having more causal relations per element.
+The Kronecker structure implies a \emph{vacuum factorization}: the Wightman function $W[(t_1, \alpha_1), (t_2, \alpha_2)]$ depends only on the temporal indices $t_1$ and $t_2$, not on the spatial positions $\alpha_1, \alpha_2$. The variation of $W$ with spatial indices is $\sim\!10^{-17}$ (machine precision), confirming that the full $N \times N$ Wightman matrix is determined by a $T \times T$ reduced matrix. This is effective $(0\!+\!1)$-dimensional quantum mechanics: all entanglement is temporal, and spatial degrees of freedom are effectively classical.
+
+A key consequence is that the entanglement entropy $S(N/2)$ is a function of $T$ alone, independent of the spatial size $s$. Doubling $s$ at fixed $T$ doubles $N$ but leaves $n_{\mathrm{pos}} = \lfloor T/2 \rfloor$ and the reduced Wightman spectrum unchanged. The central charge formula $c_{\mathrm{eff}} = 3S/\ln N$ then gives $c_{\mathrm{eff}} \to 0$ as $s \to \infty$ at fixed $T$, since $S$ is bounded while $\ln N = \ln(Ts)$ grows.
+
+The reduced Wightman matrix $W_T[t_1, t_2]$ depends only on $|t_1 - t_2|$, making it an exact Toeplitz matrix. The CDT SJ vacuum therefore possesses exact discrete time-translation invariance---a property that holds at the lattice level, not merely in the continuum limit.
+
+The eigenvalues $\{\lambda_k\}$ of $W_T$ satisfy a sum rule:
+\begin{equation}
+\sum_{k=1}^{\lfloor T/2 \rfloor} \lambda_k = \frac{2}{\pi} \ln T + 0.527\,,
+\end{equation}
+with $R^2 = 1.000$ over $T = 4$--$100$. The coefficient $2/\pi$ connects the CDT SJ vacuum to harmonic analysis on the discrete circle.
+
+Since $T \sim \sqrt{N}$ for typical CDT configurations, $n_{\mathrm{pos}} \sim \sqrt{N}/2$, while causal sets have $n_{\mathrm{pos}} \approx N/2$. The time foliation reduces the $N$-dimensional spectral problem to a $T$-dimensional one, giving $c_{\mathrm{eff}} = O(1)$ on CDT versus $c_{\mathrm{eff}} \to \infty$ on causal sets. The central charge discrepancy is therefore not merely a normalization issue but a direct consequence of the dimensional reduction imposed by the time foliation. Furthermore, the Kronecker factorization generalizes to CDT-like structures in all spatial dimensions: $n_{\mathrm{pos}} = \lfloor T/2 \rfloor$ holds for CDT with $d_{\mathrm{spatial}} = 1, 2, 3$ (2D, 3D, and 4D spacetime), independent of the spatial size.
+
+\textbf{7. MPS interpretation.} Since $S_{\max} \sim 2.28 \ln T$, the bond dimension required to represent the CDT SJ vacuum as a matrix product state (MPS) scales as $\chi \sim T^{2.28}$---polynomial in $T$. The CDT SJ vacuum is therefore an efficient MPS, consistent with its $(0+1)$-dimensional character.
+
+\textbf{8. Fragility of CDT's $c = 1$.} While CDT robustly produces $c \approx 1$ for perfectly time-sliced configurations, introducing just 5\% within-slice disorder (randomly reassigning 5\% of vertex time labels within each slice) doubles $c_{\mathrm{eff}}$ from $1.1$ to $2.1$. A \emph{single} perturbation---removing one inter-slice relation or adding one within-slice relation---increases $n_{\mathrm{pos}}$ from $\lfloor T/2 \rfloor$ to $\lfloor T/2 \rfloor + 1$, breaking the Kronecker structure. The fragility is maximal: the block decomposition is an all-or-nothing property. This may explain why causal sets---which lack a preferred foliation---fail to reproduce $c = 1$.
+
+\textbf{9. Structure vs.\ density: thinning CDT.} To test whether CDT's low $c_{\mathrm{eff}}$ is due to its regular structure or simply its lower density (fewer relations per element), we randomly thin CDT configurations to 30\% of their vertices while preserving the causal structure. The thinned CDT still has $c_{\mathrm{eff}} = 1.0$--$1.3$, confirming that CDT's $c = 1$ comes from its layered \emph{structure}, not its density. This rules out the hypothesis that causal sets' high $c_{\mathrm{eff}}$ is simply an artifact of having more causal relations per element.
+
+\textbf{10. Continuum limit caveat.} The Kronecker structure predicts $c_{\mathrm{eff}} \to 0$, not $c_{\mathrm{eff}} = 1$, in the strict continuum limit $T, s \to \infty$. Since $S(N/2)$ depends only on $T$ and is bounded by $\sim 2.28 \ln T$, while $\ln N = \ln(Ts)$ grows without bound as $s \to \infty$, the ratio $c_{\mathrm{eff}} = 3S/\ln N \to 0$. The $c \approx 1$ result at finite $N$ arises because $T \sim \sqrt{N}$ for typical configurations, giving $\ln T \approx \frac{1}{2}\ln N$. In the strict limit, the correct central charge is recovered only if $T$ and $s$ grow together in a way that maintains $\ln T / \ln N = O(1)$. This is an honest limitation of the Kronecker mechanism: it explains $c \approx 1$ at finite $N$ but does not guarantee $c = 1$ in all continuum limits.
 
 \section{Conclusion}
 
-The first cross-approach comparison of the SJ vacuum reveals that CDT reproduces the expected $c = 1$ central charge for a free scalar while causal sets yield a diverging $c_{\mathrm{eff}}$. The mechanism is a Kronecker product decomposition~(\ref{eq:kronecker}): CDT's time foliation reduces the spectral problem from $N$ to $T$ dimensions, giving $n_{\mathrm{pos}} = \lfloor T/2 \rfloor \sim \sqrt{N}$ active modes versus $n_{\mathrm{pos}} \approx N/2$ for causal sets. This result is fragile---$5\%$ within-slice disorder doubles $c_{\mathrm{eff}}$---but robust to thinning (removing $70\%$ of vertices preserves $c \approx 1$). Both discretizations share GUE-like spectral statistics, identifying this as a universal property of discrete Lorentzian field theory. These results establish CDT as a benchmark for causal set field theory and identify the time foliation as the structural feature responsible for correct field theory content.
+The first cross-approach comparison of the SJ vacuum reveals that CDT reproduces the expected $c = 1$ central charge for a free scalar while causal sets yield a diverging $c_{\mathrm{eff}}$. The mechanism is a Kronecker product decomposition~(\ref{eq:kronecker}): CDT's time foliation reduces the spectral problem from $N$ to $T$ dimensions, giving $n_{\mathrm{pos}} = \lfloor T/2 \rfloor \sim \sqrt{N}$ active modes versus $n_{\mathrm{pos}} \approx N/2$ for causal sets. The entanglement entropy depends only on $T$ (not $s$), and the reduced Wightman matrix is exactly Toeplitz, with eigenvalue sum $(2/\pi)\ln T + 0.527$. The CDT SJ vacuum is an efficient matrix product state (bond dimension polynomial in $T$). This result is fragile---$5\%$ within-slice disorder doubles $c_{\mathrm{eff}}$---but robust to thinning (removing $70\%$ of vertices preserves $c \approx 1$). An honest caveat: in the strict continuum limit $T, s \to \infty$, the Kronecker structure predicts $c_{\mathrm{eff}} \to 0$, not $c = 1$. Both discretizations share GUE-like spectral statistics, identifying this as a universal property of discrete Lorentzian field theory. These results establish CDT as a benchmark for causal set field theory and identify the time foliation as the structural feature responsible for correct field theory content.
 
 \begin{acknowledgments}
 This work was conducted with assistance from Claude (Anthropic). The SJ vacuum construction follows Johnston~\cite{johnston2009} and Sorkin~\cite{sorkin2012}. The CDT implementation follows Ambj\o{}rn, Jurkiewicz, and Loll~\cite{ambjorn2001}.
@@ -205,8 +229,8 @@ Phys.\ Rev.\ Lett.\ \textbf{103}, 180401 (2009),
 
 \bibitem{sorkin2012}
 R.~D.~Sorkin,
-``On the entropy of the vacuum outside a horizon,''
-in \emph{General Relativity and Gravitation} (2014), p.~1691,
+``Expressing entropy globally in terms of (4D) field-correlations,''
+J.\ Phys.\ Conf.\ Ser.\ \textbf{484}, 012004 (2014),
 \href{https://arxiv.org/abs/1205.2953}{arXiv:1205.2953}.
 
 \bibitem{sorkin_yazdi2018}
@@ -216,7 +240,7 @@ Class.\ Quant.\ Grav.\ \textbf{35}, 074004 (2018),
 \href{https://arxiv.org/abs/1611.10281}{arXiv:1611.10281}.
 
 \bibitem{saravani2014}
-M.~Saravani, S.~Aslanbeigi, and R.~D.~Sorkin,
+M.~Saravani, R.~D.~Sorkin, and Y.~K.~Yazdi,
 ``Spacetime entanglement entropy in 1+1 dimensions,''
 Class.\ Quant.\ Grav.\ \textbf{31}, 214006 (2014),
 \href{https://arxiv.org/abs/1311.7146}{arXiv:1311.7146}.
@@ -230,7 +254,7 @@ Phys.\ Rev.\ Lett.\ \textbf{100}, 091304 (2008),
 \bibitem{glaser2018}
 L.~Glaser, D.~O'Connor, and S.~Surya,
 ``Finite size scaling in 2d causal set quantum gravity,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 045006 (2018),
 \href{https://arxiv.org/abs/1706.06432}{arXiv:1706.06432}.
 
 \bibitem{calabrese2004}

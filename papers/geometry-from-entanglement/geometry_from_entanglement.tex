@@ -16,7 +16,7 @@
 \date{\today}
 
 \begin{abstract}
-We study how to detect emergent geometry on causal sets sampled from the Benincasa-Dowker partition function. We prove that the spectral dimension $d_s = 2$ crossing is generic to all finite graphs (intermediate value theorem), show that peak $d_s$ is determined by link density (random graphs match causal sets), and demonstrate that the CDT plateau grows with system size while the causet plateau shrinks. We then show that Sorkin-Johnston vacuum entanglement entropy provides a genuinely geometric probe: it scales as $S \sim \ln N$ consistent with 1+1D conformal field theory, and drops by a factor of $3.4$ across the Benincasa-Dowker phase transition. For spatially motivated partitions, the continuum phase satisfies the holographic monogamy inequality $I_3 \leq 0$ significantly above chance ($p < 10^{-7}$), though this result is partition-dependent. The SJ entanglement entropy distinguishes the phases of causal set quantum gravity where connectivity-based observables cannot.
+We study how to detect emergent geometry on causal sets sampled from the Benincasa-Dowker partition function. We prove that the $d_s = 2$ crossing of the spectral dimension is generic to all finite connected graphs (by the intermediate value theorem), show that the peak $d_s$ is determined by link density (random graphs match causal sets), and demonstrate that the CDT plateau grows with system size while the causet plateau shrinks. We then show that Sorkin-Johnston vacuum entanglement entropy provides a genuinely geometric probe: it scales as $S \sim \ln N$ consistent with 1+1D conformal field theory, and drops by a factor of $3.4$ across the Benincasa-Dowker phase transition. For spatially motivated partitions, the continuum phase satisfies the holographic monogamy inequality $I_3 \leq 0$ significantly above chance ($p < 10^{-7}$), though this result is partition-dependent. The SJ entanglement entropy distinguishes the phases of causal set quantum gravity in cases where connectivity-based observables cannot.
 \end{abstract}
 
 \maketitle
@@ -33,13 +33,13 @@ The spectral dimension is defined via the normalized graph Laplacian $L = I - D^
 
 \textbf{Proposition.} \emph{For any finite connected graph, $d_s(\sigma)$ is smooth on $(0,\infty)$ with $d_s \to 0$ as $\sigma \to 0^+$ and $\sigma \to \infty$. If $d_s^{\max} > c$, the IVT gives $\sigma_1 < \sigma_2$ with $d_s(\sigma_1) = d_s(\sigma_2) = c$.}
 
-The proof follows from $P > 0$ (connectedness), the vanishing of $\sigma P'$ at both limits, and continuity. The value $c = 2$ plays no special role---the crossing is topological, not physical.
+The proof follows from $P > 0$ (by connectedness), the vanishing of $\sigma P'$ at both limits, and continuity. The value $c = 2$ plays no special role: the crossing is topological, not physical.
 
 \section{Spectral dimension fails on causal sets}
 
 We compare sprinkled 2D causal sets, 2D CDT, random DAGs, and Erd\H{o}s-R\'enyi graphs at $N = 100$--$800$.
 
-\textbf{Result 1:} All graph types cross $d_s = 2$ (Table~\ref{tab:crossing}, Fig.~\ref{fig:combined}a). Random graphs produce peak $d_s$ values indistinguishable from causal sets.
+\textbf{Result 1:} All graph types cross $d_s = 2$ (Table~\ref{tab:crossing}, Fig.~\ref{fig:combined}a). Random graphs produce peak $d_s$ values indistinguishable from those of causal sets.
 
 \begin{figure*}[t]
 \includegraphics[width=0.48\textwidth]{fig1_combined.pdf}
@@ -66,7 +66,7 @@ Erd\H{o}s-R\'enyi & 4.95 \\
 \label{tab:crossing}
 \end{table}
 
-\textbf{Result 2:} CDT has a growing plateau while the causet plateau shrinks (Table~\ref{tab:plateau}). CDT's peak $d_s$ is stable near 2.5 (correctly 2D); the causet peak diverges to 5.66. The plateau width is defined as the fraction of $\sigma$ values with $|d_s - 2| < 0.3$ (results are qualitatively unchanged for thresholds 0.2 and 0.5).
+\textbf{Result 2:} CDT has a growing plateau while the causet plateau shrinks (Table~\ref{tab:plateau}). CDT's peak $d_s$ remains stable near 2.5 (correctly reflecting 2D); the causet peak grows to 5.66. The plateau width is defined as the fraction of $\sigma$ values with $|d_s - 2| < 0.3$ (results are qualitatively unchanged for thresholds 0.2 and 0.5).
 
 \begin{table}[h]
 \centering
@@ -85,17 +85,17 @@ $N$ & Peak & Plateau & Peak & Plateau \\
 \label{tab:plateau}
 \end{table}
 
-\textbf{Result 3:} Random graphs with matched link density produce identical peak $d_s$ as causal sets ($3.0$ at $L/N = 2.6$; $4.0$ at $L/N = 10.6$). This holds for both the link-graph Laplacian and the Benincasa-Dowker d'Alembertian~\cite{benincasa2010}. The problem is structural, not operational.
+\textbf{Result 3:} Random graphs with matched link density produce the same peak $d_s$ as causal sets ($3.0$ at $L/N = 2.6$; $4.0$ at $L/N = 10.6$). This holds for both the link-graph Laplacian and the Benincasa-Dowker d'Alembertian~\cite{benincasa2010}. The problem is structural, not operational.
 
 \textbf{Reinterpretation:} Eichhorn and Mizera~\cite{eichhorn2014} found that $d_s$ \emph{increases} at small scales on causal sets---opposite to CDT. Our finding explains this: the walker probes the high-connectivity local neighborhood, and $d_s$ tracks connectivity. Subsequent fixes (spatial hypersurfaces~\cite{eichhorn2019}, continuum d'Alembertian~\cite{belenchia2016}) all work by taming the scale-dependent connectivity.
 
 \section{SJ vacuum entanglement: construction}
 
-The Sorkin-Johnston vacuum for a free massless scalar on a causal set $\mathcal{C}$ with causal matrix $C$ is constructed from the Pauli-Jordan function $i\Delta_{ij} = (2/N)(C_{ji} - C_{ij})$. The Wightman function is the positive-frequency part:
+The Sorkin-Johnston vacuum for a free massless scalar on a causal set $\mathcal{C}$ with causal matrix $C$ is constructed from the Pauli-Jordan function $\Delta_{ij} = (2/N)(C_{ji} - C_{ij})$, a real antisymmetric matrix. The Hermitian matrix $i\Delta$ has real eigenvalues $\{\lambda_k\}$ in $\pm$ pairs, and the Wightman function is the positive-frequency part:
 \begin{equation}
-W = \sum_{\lambda_k > 0} \lambda_k \, |\mathbf{v}_k\rangle\langle\mathbf{v}_k|,
+W = \sum_{\lambda_k > 0} \lambda_k \, |\mathbf{v}_k\rangle\langle\mathbf{v}_k|
 \end{equation}
-where $H = i\cdot(i\Delta)$ has eigenvalues $\{\lambda_k\}$ and eigenvectors $\{|\mathbf{v}_k\rangle\}$~\cite{johnston2009}. The $2/N$ normalization ensures $W$ eigenvalues lie in $[0,1]$. The entanglement entropy of sub-region $A$ is $S(A) = -\mathrm{Tr}[W_A\ln W_A + (I-W_A)\ln(I-W_A)]$~\cite{sorkin2012}.
+\cite{johnston2009}. The $2/N$ normalization ensures $W$ eigenvalues lie in $[0,1]$. The entanglement entropy of sub-region $A$ is $S(A) = -\mathrm{Tr}[W_A\ln W_A + (I-W_A)\ln(I-W_A)]$~\cite{sorkin2012}.
 
 The failure of spectral dimension raises a concrete question: what observable \emph{does} probe geometry on causal sets? We propose the Sorkin-Johnston vacuum entanglement entropy and test it across the same BD transition where spectral dimension fails.
 
@@ -165,7 +165,7 @@ The combined picture:
 
 We note that the SJ entanglement entropy correlates strongly with the BD action across the transition ($r > 0.98$), but the proportionality constant depends on $N$ and $\epsilon$ and is not universal.
 
-The practical recommendation: causal set studies seeking to detect emergent geometry should use the SJ vacuum entanglement entropy rather than link-graph spectral dimension.
+The practical recommendation is that causal set studies seeking to detect emergent geometry should use the SJ vacuum entanglement entropy rather than link-graph spectral dimension.
 
 \section{Conclusion}
 
@@ -203,15 +203,15 @@ Phys.\ Rev.\ Lett.\ \textbf{103}, 180401 (2009),
 
 \bibitem{sorkin2012}
 R.~D.~Sorkin,
-``On the entropy of the vacuum outside a horizon,''
-in \emph{General Relativity and Gravitation} (2014), p.~1691,
+``Expressing entropy globally in terms of (4D) field-correlations,''
+J.\ Phys.\ Conf.\ Ser.\ \textbf{484}, 012004 (2014),
 \href{https://arxiv.org/abs/1205.2953}{arXiv:1205.2953}.
 
 \bibitem{benincasa2010}
 D.~M.~T.~Benincasa and F.~Dowker,
 ``The scalar curvature of a causal set,''
 Phys.\ Rev.\ Lett.\ \textbf{104}, 181301 (2010),
-\href{https://arxiv.org/abs/0711.2460}{arXiv:0711.2460}.
+\href{https://arxiv.org/abs/1001.2725}{arXiv:1001.2725}.
 
 \bibitem{belenchia2016}
 A.~Belenchia, D.~M.~T.~Benincasa, A.~Marcian\`o, and L.~Modesto,
@@ -234,7 +234,7 @@ Class.\ Quant.\ Grav.\ \textbf{35}, 074004 (2018),
 \bibitem{glaser2018}
 L.~Glaser, D.~O'Connor, and S.~Surya,
 ``Finite size scaling in 2d causal set quantum gravity,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 045006 (2018),
 \href{https://arxiv.org/abs/1706.06432}{arXiv:1706.06432}.
 
 \bibitem{bombelli1987}

@@ -1,0 +1,16 @@
+Dear Editor,
+
+I am writing to submit the manuscript "The cosmological constant from causal set discreteness: everpresent Lambda confronts DESI" for consideration in the Journal of Cosmology and Astroparticle Physics.
+
+This paper revisits the causal set "everpresent Lambda" model -- Sorkin's proposal that Planck-scale discreteness produces a stochastic cosmological constant of magnitude Lambda ~ H_0^2 -- and confronts it with modern observational data including DESI DR1 baryon acoustic oscillation measurements.
+
+Using a properly Planck-normalized cosmological simulation interfaced with the CLASS Boltzmann code, we show that a single parameter alpha = 0.03 reproduces the observed cosmological constant from first principles. After conservative anthropic selection for structure formation, the model predicts Omega_Lambda = 0.732 +/- 0.103, with the observed value of 0.685 sitting at the 31st percentile -- a perfectly typical realization. The model naturally produces w_0 != -1 because the stochastic Lambda varies in time, with 48% of realizations falling within the DESI 2-sigma contour for the w_0-w_a parameter space. However, we find that the CMB power spectrum provides the dominant constraint, deviating from Lambda-CDM by ~20x more than the DESI-preferred w_0w_a-CDM fit.
+
+The everpresent Lambda model is unique among dark energy theories in that it predicts rather than fits Omega_Lambda ~ O(1), addressing the cosmological constant problem at its root. This paper is well suited to JCAP because it connects fundamental discrete quantum gravity to observational cosmology, providing testable predictions against current and forthcoming datasets.
+
+This work was conducted with AI assistance (Claude, Anthropic), as noted in the acknowledgments. The manuscript is not under consideration elsewhere.
+
+Sincerely,
+Matt Loftus
+Independent Researcher
+matthew.a.loftus@gmail.com

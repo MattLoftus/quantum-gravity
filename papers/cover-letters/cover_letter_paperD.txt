@@ -1,0 +1,16 @@
+Dear Editor,
+
+I am writing to submit the manuscript "Universal GUE spectral statistics of the Sorkin-Johnston vacuum on causal sets" for consideration in Physical Review D.
+
+This paper presents the first systematic characterization of eigenvalue statistics for the Pauli-Jordan operator in discrete quantum gravity. We find universal Gaussian unitary ensemble (GUE) level repulsion across all phases of the Benincasa-Dowker partition function, all system sizes (N = 20-1000), all values of the non-locality parameter epsilon, and all causal set types tested. The level spacing ratio <r> = 0.56-0.60 is consistent with GUE and persists from the continuum phase through the deep crystalline phase to pure Kleitman-Rothschild orders.
+
+We provide two key results beyond establishing universality. First, we explain the mechanism: the GUE statistics are a consequence of Erdos-Yau-type universality for antisymmetric matrices, meaning they follow from the algebraic structure of the Pauli-Jordan operator rather than from gravitational physics specifically. Second, we identify a previously reported sub-Poisson dip (<r> ~ 0.12) near the phase transition as an artifact of phase mixing -- concatenating eigenvalue spectra from coexisting continuum and crystalline MCMC configurations produces spurious small spacings. We confirm this by directly reproducing the artifact through artificial spectrum concatenation.
+
+The number variance Sigma^2(L) grows linearly rather than logarithmically, establishing that GUE universality is short-range only. This paper connects random matrix theory, a central tool in quantum chaos and many-body physics, to the causal set approach to quantum gravity.
+
+This work was conducted with AI assistance (Claude, Anthropic), as noted in the acknowledgments. The manuscript is not under consideration elsewhere.
+
+Sincerely,
+Matt Loftus
+Independent Researcher
+matthew.a.loftus@gmail.com

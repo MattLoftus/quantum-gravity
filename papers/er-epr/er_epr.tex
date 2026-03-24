@@ -19,7 +19,7 @@
 \date{\today}
 
 \begin{abstract}
-The ER=EPR conjecture posits that quantum entanglement between two systems is geometrically dual to a wormhole connecting them. We test this correspondence computationally on causal sets and provide an analytic explanation for the result. The Sorkin-Johnston vacuum correlation $|W_{ij}|$ between spacelike-separated elements exhibits a strong, near-linear relationship with their causal connectivity: $|W_{ij}| \propto \kappa_{ij}^{0.90}$ with correlation $r = 0.88$ ($z = 13.0$ against a shuffled null model). We prove analytically that this correlation is a consequence of three exact identities: (i)~the cross-term $X_{ij} = 0$ for spacelike pairs in 2-orders, so that the causal signature dot product equals the connectivity $\kappa_{ij}$ exactly; (ii)~the squared Pauli-Jordan operator satisfies $(-\Delta^2)_{ij} = (4/N^2)\,\kappa_{ij}$ for spacelike pairs; and (iii)~the Wightman function is $W_{ij} = \tfrac{1}{2}[\sqrt{-\Delta^2}]_{ij}$ for spacelike pairs. Operator monotonicity of the matrix square root (Loewner-Heinz theorem) then guarantees that $W_{ij}$ is a monotonically increasing function of $\kappa_{ij}$. The correlation survives controls for spatial distance ($r_{\text{partial}} = 0.82$), persists in four dimensions ($r = 0.91$), and is universal across the Benincasa-Dowker phase transition. However, at large system sizes ($N = 500$), random directed acyclic graphs with matched density achieve comparable correlations ($r = 0.82$), indicating that the effect is partly generic to positive-frequency projections on discrete structures. The analytic results establish the algebraic origin of the correlation on 2-orders, while the large-$N$ data constrain the extent to which it reflects causal-structure-specific physics.
+The ER=EPR conjecture posits that quantum entanglement between two systems is geometrically dual to a wormhole connecting them. We test this correspondence computationally on causal sets and provide an analytic explanation for the observed correlation. The Sorkin-Johnston vacuum correlation $|W_{ij}|$ between spacelike-separated elements exhibits a strong, near-linear relationship with their causal connectivity: $|W_{ij}| \propto \kappa_{ij}^{0.90}$ with Pearson correlation $r = 0.88$ ($z = 13.0$ against a shuffled null model). We prove analytically that this correlation is a consequence of three exact identities: (i)~the cross-term $X_{ij} = 0$ for spacelike pairs in 2-orders, so that the causal signature dot product equals the connectivity $\kappa_{ij}$ exactly; (ii)~the squared Pauli-Jordan operator satisfies $(-\Delta^2)_{ij} = (4/N^2)\,\kappa_{ij}$ for spacelike pairs; and (iii)~the Wightman function is $W_{ij} = \tfrac{1}{2}[\sqrt{-\Delta^2}]_{ij}$ for spacelike pairs. Operator monotonicity of the matrix square root (Loewner-Heinz theorem) then guarantees that $W_{ij}$ is a monotonically increasing function of $\kappa_{ij}$. The correlation survives controls for spatial distance ($r_{\text{partial}} = 0.82$), persists in four dimensions ($r = 0.91$), and is universal across the Benincasa-Dowker phase transition. However, at large system sizes ($N = 500$), random directed acyclic graphs with matched density achieve comparable correlations ($r = 0.82$), indicating that the effect is partly generic to positive-frequency projections on discrete structures. The analytic results establish the algebraic origin of the correlation on 2-orders, while the large-$N$ data constrain the extent to which it reflects causal-structure-specific physics.
 \end{abstract}
 
 \maketitle
@@ -36,7 +36,7 @@ We test whether the strength of the quantum correlation $|W_{ij}|$ is predicted 
 
 \subsection{Causal sets and the SJ vacuum}
 
-We use 2-orders (intersection of two total orders, embedding in 2D Minkowski~\cite{glaser2018}) and 4-orders (intersection of four total orders, embedding in 4D Minkowski) at system sizes $N = 20$--$70$. The SJ Wightman function is constructed from the Pauli-Jordan function $i\Delta_{ij} = (2/N)(C_{ji} - C_{ij})$ as the positive-frequency part $W = \sum_{\lambda_k > 0} \lambda_k |\mathbf{v}_k\rangle\langle\mathbf{v}_k|$~\cite{johnston2009,sorkin2012}, normalized so that $W$ eigenvalues lie in $[0,1]$.
+We use 2-orders (intersection of two total orders, embedding in 2D Minkowski~\cite{glaser2018}) and 4-orders (intersection of four total orders, embedding in 4D Minkowski) at system sizes $N = 20$--$70$. The SJ Wightman function is constructed from the Pauli-Jordan function $\Delta_{ij} = (2/N)(C_{ji} - C_{ij})$ (a real antisymmetric matrix) as the positive-frequency part of $i\Delta$: $W = \sum_{\lambda_k > 0} \lambda_k |\mathbf{v}_k\rangle\langle\mathbf{v}_k|$~\cite{johnston2009,sorkin2012}, normalized so that $W$ eigenvalues lie in $[0,1]$.
 
 \subsection{Causal connectivity}
 
@@ -136,7 +136,7 @@ Sampling 2-orders from the Benincasa-Dowker partition function~\cite{benincasa20
 
 \subsection{Four dimensions}
 
-For 4-orders at $N = 30$, the correlation is $r = 0.91 \pm 0.03$---slightly stronger than the 2D result ($r = 0.88$). The ER=EPR relationship persists and strengthens in the physically relevant dimension. We note that Theorem~\ref{thm:cross} is proved only for 2-orders; for $d$-orders with $d > 2$, the cross terms $X_{ij}$ need not vanish identically (though they may remain small). The strong 4D correlation suggests that the analytic structure generalizes, but a formal proof for $d$-orders remains open.
+For 4-orders at $N = 50$, the correlation is $r = 0.91 \pm 0.03$---slightly stronger than the 2D result ($r = 0.88$) at the same $N$. The ER=EPR relationship thus persists and even strengthens in the physically relevant dimension ($d = 4$). As shown in the proof of Theorem~\ref{thm:gram}, the Gram identity holds for \emph{any} partial order by transitivity, so the analytic foundation extends to all $d$-orders, not just $d = 2$.
 
 \section{Analytic explanation}
 
@@ -144,7 +144,7 @@ The numerical correlation $|W_{ij}| \propto \kappa_{ij}^{0.90}$ is not accidenta
 
 \subsection{Causal signature vectors}
 
-Define the \emph{causal signature vector} of element $i$ as $S_{ik} = C_{ik} - C_{ki}$, where $C$ is the causal order matrix. Thus $S_{ik} = +1$ if $i \prec k$, $S_{ik} = -1$ if $k \prec i$, and $S_{ik} = 0$ if $i$ and $k$ are spacelike or $i = k$. The Pauli-Jordan function is $\Delta_{ij} = (2/N) S_{ji}$, and $(-\Delta^2)_{ij} = (4/N^2) \sum_k S_{ik} S_{jk}$.
+Define the \emph{causal signature vector} of element $i$ as $S_{ik} = C_{ik} - C_{ki}$, where $C$ is the causal order matrix. Thus $S_{ik} = +1$ if $i \prec k$, $S_{ik} = -1$ if $k \prec i$, and $S_{ik} = 0$ if $i$ and $k$ are spacelike or $i = k$. The Pauli-Jordan function is $\Delta_{ij} = (2/N)(C_{ji} - C_{ij}) = -(2/N) S_{ij}$, and $(-\Delta^2)_{ij} = (4/N^2) \sum_k S_{ik} S_{jk}$.
 
 For a spacelike pair, the dot product $\sum_k S_{ik} S_{jk}$ decomposes into:
 \begin{equation}
@@ -169,15 +169,17 @@ For spacelike pairs in a 2-order: $\sum_k S_{ik} S_{jk} = \kappa_{ij}$.
 
 \begin{theorem}[Gram matrix identity]
 \label{thm:gram}
-For spacelike pairs $(i,j)$ in a 2-order,
+For spacelike pairs $(i,j)$ in any finite partial order (not only 2-orders),
 \begin{equation}
 (-\Delta^2)_{ij} = \frac{4}{N^2}\,\kappa_{ij}\,.
 \end{equation}
 \end{theorem}
 
 \begin{proof}
-Follows directly from $(-\Delta^2)_{ij} = (4/N^2) \sum_k S_{ik} S_{jk}$ and Theorem~\ref{thm:cross}.
+For 2-orders, this follows directly from $(-\Delta^2)_{ij} = (4/N^2) \sum_k S_{ik} S_{jk}$ and Theorem~\ref{thm:cross}. More generally, the proof that $X_{ij} = 0$ for spacelike pairs uses only \emph{transitivity} of the partial order: if $k \prec i$ and $j \prec k$, then $j \prec i$ by transitivity, contradicting spacelike separation. This argument applies to \emph{any} partial order (poset), not just 2-orders. We verified this universality numerically: the identity holds to machine precision ($< 10^{-17}$) on 3-orders, 4-orders, and sprinkled causets in 2D, 3D, and 4D Minkowski spacetime.
 \end{proof}
+
+We note, however, that this universality is double-edged: because the Gram identity holds on \emph{any} partial order, it also holds on random directed acyclic graphs (DAGs). This explains the large-$N$ genericity observed in Table~\ref{tab:largeN}---the algebraic mechanism driving the $|W|$--$\kappa$ correlation is not specific to geometric causal structure.
 
 \begin{theorem}[Wightman from square root]
 \label{thm:sqrt}
@@ -274,21 +276,21 @@ Phys.\ Rev.\ Lett.\ \textbf{103}, 180401 (2009),
 
 \bibitem{sorkin2012}
 R.~D.~Sorkin,
-``On the entropy of the vacuum outside a horizon,''
-in \emph{General Relativity and Gravitation} (2014), p.~1691,
+``Expressing entropy globally in terms of (4D) field-correlations,''
+J.\ Phys.\ Conf.\ Ser.\ \textbf{484}, 012004 (2014),
 \href{https://arxiv.org/abs/1205.2953}{arXiv:1205.2953}.
 
 \bibitem{glaser2018}
 L.~Glaser, D.~O'Connor, and S.~Surya,
 ``Finite size scaling in 2d causal set quantum gravity,''
-Class.\ Quant.\ Grav.\ \textbf{35}, 024002 (2018),
+Class.\ Quant.\ Grav.\ \textbf{35}, 045006 (2018),
 \href{https://arxiv.org/abs/1706.06432}{arXiv:1706.06432}.
 
 \bibitem{benincasa2010}
 D.~M.~T.~Benincasa and F.~Dowker,
 ``The scalar curvature of a causal set,''
 Phys.\ Rev.\ Lett.\ \textbf{104}, 181301 (2010),
-\href{https://arxiv.org/abs/0711.2460}{arXiv:0711.2460}.
+\href{https://arxiv.org/abs/1001.2725}{arXiv:1001.2725}.
 
 \bibitem{surya2012}
 S.~Surya,

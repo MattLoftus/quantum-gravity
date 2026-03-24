@@ -1,0 +1,18 @@
+Dear Editor,
+
+I am writing to submit the manuscript "Entanglement tracks causal connectivity in discrete quantum gravity: a computational test of ER=EPR on causal sets" for consideration in Physical Review D.
+
+This paper provides a computational test of the ER=EPR conjecture on causal sets and establishes an analytic explanation for the result. We find that the Sorkin-Johnston vacuum correlation |W_ij| between spacelike-separated elements exhibits a strong, near-linear relationship with their causal connectivity kappa_ij (shared ancestors plus descendants): |W_ij| ~ kappa^{0.90} with correlation r = 0.88 (z = 13.0 against a shuffled null model).
+
+The central contribution is an analytic proof chain explaining this correlation through three exact identities: (i) the cross terms X_ij vanish identically for spacelike pairs in 2-orders; (ii) the squared Pauli-Jordan operator satisfies (-Delta^2)_ij = (4/N^2)*kappa_ij for spacelike pairs; and (iii) the Wightman function is W_ij = (1/2)[sqrt(-Delta^2)]_ij for spacelike pairs. Operator monotonicity via the Loewner-Heinz theorem then guarantees the observed monotone dependence. The correlation survives controls for spatial distance (partial r = 0.82), persists in four dimensions (r = 0.91), and is universal across the BD phase transition.
+
+We are transparent about limitations: at large N (N = 500), random DAGs with matched density achieve comparable correlations, indicating the effect is partly generic to positive-frequency projections on discrete structures.
+
+This work is suitable for Physical Review D because it connects two major themes in theoretical physics -- the ER=EPR conjecture and causal set quantum gravity -- through rigorous computation and analytic proof.
+
+This work was conducted with AI assistance (Claude, Anthropic), as noted in the acknowledgments. The manuscript is not under consideration elsewhere.
+
+Sincerely,
+Matt Loftus
+Independent Researcher
+matthew.a.loftus@gmail.com

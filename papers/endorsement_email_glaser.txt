@@ -1,0 +1,28 @@
+To: lisa.glaser@univie.ac.at
+Subject: arXiv endorsement request for gr-qc (causal set quantum gravity)
+
+Dear Dr. Glaser,
+
+I am an independent researcher and I am writing to ask if you would be willing to endorse me for arXiv submissions in the gr-qc category.
+
+I have completed a computational study of causal set quantum gravity, resulting in eight papers ready for submission. The work builds extensively on your finite-size scaling analysis of the 2D BD transition. Key results include:
+
+- A Kronecker product theorem explaining why the SJ vacuum on CDT reproduces c=1 while causal sets do not (first cross-approach SJ vacuum comparison)
+
+- Spectral graph theory of causal set Hasse diagrams, showing algebraic connectivity sharply distinguishes manifold-like causets from random DAGs
+
+- Exact combinatorial results for random 2-orders: a master interval formula, the Vershik-Kerov antichain theorem applied to causal sets, E[S_Glaser]=1 for all N, and exact partition functions for small N
+
+- Universal GUE spectral statistics of the Pauli-Jordan operator across all phases (with identification of a phase-mixing artifact in earlier measurements)
+
+- Interval entropy as a new order parameter for the BD transition, including a novel three-phase structure in 4D
+
+All code (~66,000 lines of Python, ~100 experiments) will be released publicly on GitHub. The work was conducted with AI assistance (Claude, Anthropic), which is noted in the acknowledgments of each paper.
+
+I would be happy to share any or all of the manuscripts if you would like to review them before endorsing.
+
+Thank you for considering this request.
+
+Best regards,
+Matt Loftus
+matthew.a.loftus@gmail.com

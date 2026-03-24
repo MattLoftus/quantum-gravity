@@ -20,7 +20,7 @@ export const papers: Paper[] = [
     keyClaim: "CDT's time foliation creates a Kronecker product structure that limits quantum modes to O(sqrt(N)), explaining why CDT reproduces c=1 while causal sets diverge.",
     pages: 7,
     tier: 1,
-    abstract: "First cross-approach comparison of the Sorkin-Johnston vacuum on Causal Dynamical Triangulations vs causal sets. CDT gives c_eff approaching 1 (free scalar), while causal sets give c_eff diverging to infinity. The Kronecker product theorem C^T - C = A_T tensor J explains why: CDT has only floor(T/2) positive modes vs ~N/2 for causal sets. Exact eigenvalue formula mu_k = cot(pi(2k-1)/(2T)) verified to 10^-14. Single perturbation breaks the structure -- extreme fragility. Generalizes to all spatial dimensions."
+    abstract: "First cross-approach comparison of the Sorkin-Johnston vacuum on Causal Dynamical Triangulations vs causal sets. CDT gives c_eff approaching 1 (free scalar), while causal sets give c_eff diverging to infinity. The Kronecker product theorem C^T - C = A_T tensor J explains why: CDT has only floor(T/2) positive modes vs ~N/2 for causal sets. Exact eigenvalue formula mu_k = cot(pi(2k-1)/(2T)) verified to 10^-14. Entanglement entropy S(N/2) depends only on T, not spatial size s. Reduced Wightman matrix W_T is exactly Toeplitz (time-translation invariant). Eigenvalue sum rule: sum(lambda_k) = (2/pi)ln(T) + 0.527 (R^2=1.000). CDT SJ vacuum is an efficient MPS (bond dimension polynomial in T). Single perturbation breaks the structure -- extreme fragility. Caveat: c_eff -> 0 in the strict continuum limit T,s -> infinity."
   },
   {
     id: "G",
@@ -28,10 +28,10 @@ export const papers: Paper[] = [
     title: "Exact Combinatorics of Random 2-Orders",
     score: 8.0,
     targetJournal: "J. Combinatorial Theory A",
-    keyClaim: "15+ exact theorems for random 2-orders including master interval formula, E[f]=1/2, E[links]=(N+1)H_N - 2N, and E[S_Glaser]=1 for all N.",
+    keyClaim: "16+ exact theorems for random 2-orders including master interval formula, E[f]=1/2, E[links]=(N+1)H_N - 2N, E[S_Glaser]=1 for all N, chain-antichain symmetry, and E[S_BD(epsilon)].",
     pages: 9,
     tier: 1,
-    abstract: "A comprehensive collection of exact analytic results for random 2-orders (intersections of two random total orders on N elements). Key results: ordering fraction E[f]=1/2 with Var[f]=(2N+5)/[18N(N-1)], master interval formula P(int=k|gap=m)=2(m-k)/[m(m+1)], expected links E[L]=(N+1)H_N - 2N, link fraction ~4ln(N)/N, Glaser action E[S_Glaser]=1 for all N >= 2, antichain width ~2sqrt(N) with Tracy-Widom fluctuations, maximal elements E[max]=H_N, and k-antichains E=C(N,k)/k!."
+    abstract: "A comprehensive collection of exact analytic results for random 2-orders (intersections of two random total orders on N elements). Key results: ordering fraction E[f]=1/2 with Var[f]~1/(9N), master interval formula P(int=k|gap=m)=(m-k-1)/[m(m-1)], expected links E[L]=(N+1)H_N - 2N, link fraction 2ln(N)/N + 2(gamma-1)/N (undirected), Glaser action E[S_Glaser]=1 for all N >= 2, antichain width ~2sqrt(N) with Tracy-Widom fluctuations, maximal elements E[max]=H_N, k-antichains E=C(N,k)/k!, chain-antichain symmetry E[chains]=E[antichains]=C(N,k)/k!, unimodality of E[N_k], and E[S_BD(epsilon)] exact formula verified to 1%."
   },
   {
     id: "C",
@@ -219,11 +219,14 @@ export const categoryAnalysis = [
 ];
 
 export const scoreDistribution = [
-  { range: "3-4", count: 35 },
-  { range: "4-5", count: 65 },
-  { range: "5-6", count: 120 },
-  { range: "6-7", count: 180 },
-  { range: "7-8", count: 140 },
-  { range: "8-9", count: 50 },
-  { range: "9-10", count: 10 },
+  { range: "3-4", count: 40 },
+  { range: "4-5", count: 75 },
+  { range: "5-6", count: 135 },
+  { range: "6-7", count: 200 },
+  { range: "7-8", count: 155 },
+  { range: "8-9", count: 80 },
+  { range: "9-10", count: 15 },
 ];
+
+export const totalIdeas = 700;
+export const totalExperiments = 118;

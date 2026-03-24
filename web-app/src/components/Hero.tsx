@@ -17,9 +17,8 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm">
           <Stat value="600" label="Ideas tested" />
           <Stat value="~110" label="Experiments" />
-          <Stat value="10" label="Papers" />
-          <Stat value="8" label="For submission" />
-          <Stat value="22+" label="Results scoring 8+" />
+          <Stat value="10" label="Papers written" />
+          <Stat value="15+" label="Exact theorems" />
         </div>
       </div>
     </section>
